@@ -129,3 +129,10 @@ The first three lines of this recipe are Chef resources that will create a direc
 ## Git process notes
 * Master branch to be used to build extra disk partitions and file systems, then documentation
 * Gui branch to build out Gnome and guest additions
+
+### Step One and example
+* Add the tz recipe to the Vagrantfile on the gui branch
+* Now `vagrant up` will set the timezone when on the gui branch, but not on master.
+* Proposed rules
+  * Modify the README on the master branch
+  * Modify the Vagrantfile on the gui branch
