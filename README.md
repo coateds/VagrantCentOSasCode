@@ -118,3 +118,14 @@ execute "mount -a"
 ```
 
 The first three lines of this recipe are Chef resources that will create a directory if it does not already exist. The execute blocks will run a Bash command to append a line to the fstab file if it does not already exist. The not_if is a guard/conditional to test for a word/phrase in a line in the file. Only if it does not exist will the line be appended.
+
+# Environment notes
+* Windows 10
+* Chocolatey
+* VirtualBox (installed with choco)
+* Vagrant (installed with choco)
+* Git (installed with choco)
+
+## Git process notes
+* Master branch to be used to build extra disk partitions and file systems, then documentation
+* Gui branch to build out Gnome and guest additions
