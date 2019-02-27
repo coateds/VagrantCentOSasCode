@@ -126,6 +126,14 @@ The first three lines of this recipe are Chef resources that will create a direc
 * Vagrant (installed with choco)
 * Git (installed with choco)
 
+## Working with VirtualBox/Vagrant/Windows host
+* Whenever possible, use the vagrant commands to control a vm
+  * `vagrant halt/reload/destroy` to shutdown/reboot/delete
+  * If vagrant fails to fully destroy a box. (vagrant up returns error that box already exists) delete the folder for it in C:\Users\[user]\VirtualBox VMs.
+  * Race conditions can occur, particularly on a vagrant reload
+    * This might be solved by increasing the timeout:
+    * `config.vm.boot_timeout = 1200`
+
 ## Git process notes
 * Master branch to be used to build extra disk partitions and file systems, then documentation
 * Gui branch to build out Gnome and guest additions
