@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
   # and moves on... send the error to /dev/null
   config.vm.provision "shell", inline: <<-SHELL
     yum install gdisk -y
-    yum upgrade -y
+    # yum upgrade -y
     sgdisk -n 1:2048:22527 -t 1:8300 /dev/sdb 2> /dev/null
     sgdisk -n 2:$(sgdisk -F /dev/sdb):43007 -t 2:8300 /dev/sdb 2> /dev/null
     sgdisk -n 3:$(sgdisk -F /dev/sdb):63487 -t 3:8300 /dev/sdb 2> /dev/null
@@ -40,5 +40,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "chef_solo" do |chef|
     chef.add_recipe "mountfs"
+    chef.add_recipe "tz"
   end
 end
