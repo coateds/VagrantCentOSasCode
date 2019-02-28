@@ -45,5 +45,6 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "tz"
     chef.add_recipe "ga-dependencies"
     chef.add_recipe "gui"
+    chef.add_recipe "devops-apps"
   end
 end
