@@ -132,7 +132,12 @@ The first three lines of this recipe are Chef resources that will create a direc
   * If vagrant fails to fully destroy a box. (vagrant up returns error that box already exists) delete the folder for it in C:\Users\[user]\VirtualBox VMs.
   * Race conditions can occur, particularly on a vagrant reload
     * This might be solved by increasing the timeout:
-    * `config.vm.boot_timeout = 1200`
+      * `config.vm.boot_timeout = 1200`  --  NO, this does not work
+    * Symptoms of race condition are:
+      * "Vagrant was unable to mount VirtualBox shared folders..."
+      * "...the command attempted was:  mount -t vboxsf -o uid=1000,gid=1000 vagrant /vagrant"
+      * in particular, this occurs after the first vagrant reload post GA install
+      * The workaround is to wait until the VM comes up to the gui and vagrant reload a second time
 
 ## Git process notes
 * Master branch to be used to build extra disk partitions and file systems, then documentation
