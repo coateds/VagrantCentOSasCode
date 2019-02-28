@@ -4,6 +4,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", type: "dhcp"
   config.vm.hostname = "CentOSasCode"
   # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.boot_timeout = 1200
+  #     default is 300
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "CentOSasCode"
@@ -40,5 +42,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "chef_solo" do |chef|
     chef.add_recipe "mountfs"
+    chef.add_recipe "tz"
+    chef.add_recipe "ga-dependencies"
+    chef.add_recipe "gui"
   end
 end
