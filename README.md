@@ -3,7 +3,27 @@ Build out a Gui CentOS Vagrant/VirtualBox with Bash and Chef provisioning
 
 This instructional example demonstrates the ability to create and provision a CentOS 7.5 Vagrant box using infrastructure as code techniques. The build process will utilize both Bash scripting and Chef recipes/resources to configure the box with example disk partitions, the Gnome gui desktop, the VirtualBox Guest Additions and application software.
 
-The first step is to configure extra storage devices:
+The master branch of this repository builds out a CentOS box with 
+1. An extra disk
+2. The disk has 3 partitions created on it, each with different file systems and mounted via fstab
+3. yum updates
+4. The Gnome gui desktop
+5. Version 6.0.4 Guest Additions and dependencies
+6. The latest version of Git 2.x (WANdisco repository)
+7. The latest version of VSCode (MS repository)
+
+The install process is nearly hands free. However, the Guest Additions seems to require a gui logon before it will install. So the install process is:
+1. `vagrant destroy -f` (if necessary, note the ExtraDisk.vmdk is deleted)
+2. `vagrant up` (wait a long time)
+3. logon to the gui
+4. open a terminal and a logon script will run once to install the Guest Additions. Wait for this to finish
+5. `vagrant reload` This will likely fail as described below in the section "Working with VirtualBox/Vagrant/Windows host"
+6. `vagrant reload` again... 
+7. logon to the gui again. Give the system a few seconds to stabilize before using.
+
+## Walk through the automatic install process
+
+### The first step is to configure extra storage devices:
 ```
 # Add an extra disk and a DVD drive mounted with the Guest Additions iso
 file_to_disk = "ExtraDisk.vmdk"
@@ -52,7 +72,7 @@ sdb               8:16   0  256M  0 disk
 └─sdb3            8:19   0   10M  0 part
 ```
 
-In addition to inline scripts, it is possible to run a script file. Here, the provision_fs.sh file is placed in the host folder for the Vagrant guest (next to the Vagrantfile). If an attempt is made to create a file system over an existing file system an error will occur that will stop the provisioning of the rest of the box. because it is useful be able to provision the box repeatedly and only have the new or changed items have any effect, it is necessary to build a conditional to "guard" against attempts to create a new file system over an existing file system.
+In addition to inline scripts, it is possible to run a bash script file. Here, the provision_fs.sh file is placed in the host folder for the Vagrant guest (next to the Vagrantfile). If an attempt is made to create a file system over an existing file system an error will occur that will stop the provisioning of the rest of the box. Because it is useful be able to provision the box repeatedly and only have the new or changed items have any effect, it is necessary to build a conditional to "guard" against attempts to create a new file system over an existing file system.
 
 provision_fs.sh
 ```
@@ -78,7 +98,9 @@ then
 fi
 ```
 
-The conditional technique used here is to search (grep) the output of a "report" for the existence of a word or phrase that exists if the command has already been run. In this case if "part1" in included in the output of lsblk -f, then do not create the file system with the label "part1". So far Bash shell provisioning techniques have been used here. Chef is generally easier. Idempotence is often handled by default for a given Chef resource. If not, guards can be built and the conditional technique described here adapts well to these guards.
+The conditional technique used here is to search (grep) the output of a "report" for the existence of a word or phrase that exists if the command has already been run. In this case if "part1" is included in the output of lsblk -f, then do not create the file system with the label "part1". 
+
+So far, Bash shell provisioning techniques have been used here. Chef is generally easier. Idempotence is often handled by default for most Chef resources. If not, guards can be built and the conditional technique described here adapts well to these guards.
 
 To provision with Chef, use the chef_solo provisioner:
 ```
@@ -118,6 +140,79 @@ execute "mount -a"
 ```
 
 The first three lines of this recipe are Chef resources that will create a directory if it does not already exist. The execute blocks will run a Bash command to append a line to the fstab file if it does not already exist. The not_if is a guard/conditional to test for a word/phrase in a line in the file. Only if it does not exist will the line be appended.
+
+### Install Gnome gui and VirtualBox Guest extensions
+Everything from here is implemented as a Chef recipe via Chef-Solo. So the chef_solo block gets some new lines. The recipes for tz (timezone), ga-dependencies (Guest Additions) and gui (Gnome) are documented in this section
+
+updates to Vagrantfile
+```
+  config.vm.provision "chef_solo" do |chef|
+    chef.add_recipe "mountfs"
+    chef.add_recipe "tz"
+    chef.add_recipe "ga-dependencies"
+    chef.add_recipe "gui"
+    # chef.add_recipe "devops-apps"
+  end
+```
+
+Timezone (tz) simply creates a symbolic link
+
+tz
+```
+link '/etc/localtime' do
+  to '/usr/share/zoneinfo/America/Los_Angeles'
+end
+```
+
+The Guest Additions dependencies recipe, installs some packages, updates the kernel and appends to the .bashrc file. The bashrc file lines will install the Guest Additions from the iso mounted in the cdrom at the first logon from the gui
+* See comments about idempotence
+* `package %w(pkg1 pkg2 ...)` will install all of the packages in the list. Like a foreach loop.
+
+ga-dependencies
+```
+# gonna need two levels of idempotence
+# first, only add lines to the .bashrc file once
+#   echo a unique comment to the top of the code block
+#   set a guard to not append the lines if the comment exists
+# second, the bash script itself has a conditional to prevent the
+#   Guest Additions from installing if installed already
+execute "add line(s) to installga script" do
+    command <<-EOF
+      echo '# InstallGuestAdditions' >> /home/vagrant/.bashrc
+      echo 'if [ "$(ls /opt | grep 6.0.4)" == "" ]' >> /home/vagrant/.bashrc
+      echo 'then' >> /home/vagrant/.bashrc
+      echo '  sudo /run/media/vagrant/VBox_GAs_6.0.4/VBoxLinuxAdditions.run 2> /dev/null' >> /home/vagrant/.bashrc
+      echo 'fi' >> /home/vagrant/.bashrc
+    EOF
+    not_if 'cat /home/vagrant/.bashrc | grep InstallGuestAdditions'
+  end
+
+package "epel-release"
+
+# This line is effectively idempotent
+execute "sudo yum update kernel* -y"
+
+package %w(make gcc perl dkms bzip2 kernel-headers kernel-devel) 
+```
+
+No new concepts in the gui recipe
+
+gui
+```
+package "kernel-devel"
+
+# multiple commands to install Gnome
+execute "install gnome" do
+  command <<-EOF
+    yum groupinstall -y 'gnome desktop'
+    yum install -y 'xorg*'
+    yum remove -y initial-setup initial-setup-gui
+    systemctl set-default graphical.target
+    systemctl isolate graphical.target
+  EOF
+  not_if 'systemctl get-default | grep graphical'
+end
+```
 
 # Environment notes
 * Windows 10
