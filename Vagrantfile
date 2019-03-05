@@ -37,14 +37,25 @@ Vagrant.configure("2") do |config|
     echo "inline script complete"
   SHELL
 
+  # Deprecated in favor of filesystem/fs cookbooks
   # This script will create file systems on new partitions if they do not exist
-  config.vm.provision "shell", path: "provision_fs.sh"
+  # config.vm.provision "shell", path: "provision_fs.sh"
 
-  config.vm.provision "chef_solo" do |chef|
+  config.vm.provision "chef_zero" do |chef|
+    chef.cookbooks_path = "cookbooks"
+    chef.data_bags_path = "data_bags"
+    chef.nodes_path = "nodes"
+    chef.roles_path = "roles"
+
+    chef.add_recipe "hello_web"
+    chef.add_recipe "filesystem"
+    chef.add_recipe "fs"
     chef.add_recipe "mountfs"
     chef.add_recipe "tz"
-    chef.add_recipe "ga-dependencies"
     chef.add_recipe "gui"
     chef.add_recipe "devops-apps"
+
+    # deprecated
+    # chef.add_recipe "ga-dependencies"
   end
 end
