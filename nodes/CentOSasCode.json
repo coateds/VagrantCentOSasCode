@@ -6,11 +6,6 @@
     ]
   },
   "default": {
-    "hello_web": {
-      "package": "httpd",
-      "service": "httpd",
-      "docroot": "/var/www/html"
-    },
     "lvm": {
       "chef-ruby-lvm": {
         "version": "0.4.0"
@@ -45,6 +40,11 @@
         "package": "btrfs-tools",
         "forceopt": "-f"
       }
+    },
+    "hello_web": {
+      "package": "httpd",
+      "service": "httpd",
+      "docroot": "/var/www/html"
     }
   },
   "automatic": {
@@ -86,21 +86,17 @@
           "size": "99555",
           "refcount": "1"
         },
-        "drm_kms_helper": {
-          "size": "177166",
-          "refcount": "1"
-        },
         "ppdev": {
           "size": "17671",
           "refcount": "0"
         },
+        "drm_kms_helper": {
+          "size": "177166",
+          "refcount": "1"
+        },
         "syscopyarea": {
           "size": "12529",
           "refcount": "2"
-        },
-        "snd_intel8x0": {
-          "size": "38199",
-          "refcount": "0"
         },
         "sysfillrect": {
           "size": "12701",
@@ -109,6 +105,10 @@
         "sysimgblt": {
           "size": "12640",
           "refcount": "2"
+        },
+        "snd_intel8x0": {
+          "size": "38199",
+          "refcount": "0"
         },
         "fb_sys_fops": {
           "size": "12703",
@@ -148,6 +148,10 @@
           "refcount": "2",
           "version": "5.2.18 r124319"
         },
+        "i2c_piix4": {
+          "size": "22401",
+          "refcount": "0"
+        },
         "snd": {
           "size": "83311",
           "refcount": "4"
@@ -156,17 +160,9 @@
           "size": "28205",
           "refcount": "0"
         },
-        "i2c_piix4": {
-          "size": "22401",
-          "refcount": "0"
-        },
         "parport": {
           "size": "46395",
           "refcount": "2"
-        },
-        "video": {
-          "size": "24538",
-          "refcount": "0"
         },
         "soundcore": {
           "size": "15047",
@@ -175,6 +171,10 @@
         "i2c_core": {
           "size": "63151",
           "refcount": "3"
+        },
+        "video": {
+          "size": "24538",
+          "refcount": "0"
         },
         "ip_tables": {
           "size": "27126",
@@ -192,20 +192,20 @@
           "size": "46322",
           "refcount": "3"
         },
-        "crc_t10dif": {
-          "size": "12912",
-          "refcount": "1"
-        },
-        "crct10dif_generic": {
-          "size": "12647",
-          "refcount": "1"
-        },
         "sr_mod": {
           "size": "22416",
           "refcount": "0"
         },
+        "crc_t10dif": {
+          "size": "12912",
+          "refcount": "1"
+        },
         "cdrom": {
           "size": "42556",
+          "refcount": "1"
+        },
+        "crct10dif_generic": {
+          "size": "12647",
           "refcount": "1"
         },
         "crct10dif_common": {
@@ -227,24 +227,19 @@
           "refcount": "2",
           "version": "3.0"
         },
-        "libahci": {
-          "size": "31992",
-          "refcount": "1"
-        },
         "ata_piix": {
           "size": "35052",
           "refcount": "0",
           "version": "2.13"
         },
+        "libahci": {
+          "size": "31992",
+          "refcount": "1"
+        },
         "libata": {
           "size": "243070",
           "refcount": "5",
           "version": "3.00"
-        },
-        "e1000": {
-          "size": "137574",
-          "refcount": "0",
-          "version": "7.3.21-k8-NAPI"
         },
         "crc32c_intel": {
           "size": "22094",
@@ -253,6 +248,11 @@
         "serio_raw": {
           "size": "13434",
           "refcount": "0"
+        },
+        "e1000": {
+          "size": "137574",
+          "refcount": "0",
+          "version": "7.3.21-k8-NAPI"
         },
         "dm_mirror": {
           "size": "22289",
@@ -285,24 +285,24 @@
         "surplus": "0"
       },
       "total": "3880984kB",
-      "free": "2045684kB",
-      "available": "3328616kB",
-      "buffers": "4172kB",
-      "cached": "1422532kB",
-      "active": "609840kB",
-      "inactive": "917512kB",
-      "dirty": "11640kB",
-      "writeback": "104kB",
-      "anon_pages": "100632kB",
-      "mapped": "39852kB",
-      "slab": "223368kB",
-      "slab_reclaimable": "135368kB",
-      "slab_unreclaim": "88000kB",
-      "page_tables": "5052kB",
+      "free": "2711068kB",
+      "available": "3378808kB",
+      "buffers": "2108kB",
+      "cached": "831824kB",
+      "active": "426668kB",
+      "inactive": "515944kB",
+      "dirty": "157636kB",
+      "writeback": "0kB",
+      "anon_pages": "108692kB",
+      "mapped": "32020kB",
+      "slab": "149988kB",
+      "slab_reclaimable": "90520kB",
+      "slab_unreclaim": "59468kB",
+      "page_tables": "5152kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "4037640kB",
-      "committed_as": "374220kB",
+      "committed_as": "392780kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "59536kB",
       "vmalloc_chunk": "34359672824kB",
@@ -405,7 +405,7 @@
               "broadcast": "10.0.2.255",
               "scope": "Global"
             },
-            "fe80::aec2:9894:d934:5abe": {
+            "fe80::753a:7117:8111:54ff": {
               "family": "inet6",
               "prefixlen": "64",
               "scope": "Link",
@@ -477,17 +477,17 @@
           ],
           "encapsulation": "Ethernet",
           "addresses": {
-            "08:00:27:6B:E8:D1": {
+            "08:00:27:A2:8D:3D": {
               "family": "lladdr"
             },
-            "172.28.128.71": {
+            "172.28.128.85": {
               "family": "inet",
               "prefixlen": "24",
               "netmask": "255.255.255.0",
               "broadcast": "172.28.128.255",
               "scope": "Global"
             },
-            "fe80::a00:27ff:fe6b:e8d1": {
+            "fe80::a00:27ff:fea2:8d3d": {
               "family": "inet6",
               "prefixlen": "64",
               "scope": "Link",
@@ -504,7 +504,7 @@
               "scope": "link",
               "metric": "101",
               "proto": "kernel",
-              "src": "172.28.128.71"
+              "src": "172.28.128.85"
             },
             {
               "destination": "fe80::/64",
@@ -540,16 +540,16 @@
           "lo": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "0",
-              "packets": "0",
+              "bytes": "328",
+              "packets": "4",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "0",
-              "packets": "0",
+              "bytes": "328",
+              "packets": "4",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -558,16 +558,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "3447936",
-              "packets": "48291",
+              "bytes": "1684575",
+              "packets": "22612",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "427602190",
-              "packets": "320215",
+              "bytes": "217004766",
+              "packets": "159483",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -576,8 +576,8 @@
           "eth1": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "3004",
-              "packets": "22",
+              "bytes": "2104",
+              "packets": "12",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -596,19 +596,19 @@
     },
     "ipaddress": "10.0.2.15",
     "macaddress": "08:00:27:8B:C9:3F",
-    "ip6address": "fe80::a00:27ff:fe6b:e8d1",
+    "ip6address": "fe80::a00:27ff:fea2:8d3d",
     "lsb": {
 
     },
     "os": "linux",
     "os_version": "3.10.0-862.11.6.el7.x86_64",
     "platform": "centos",
-    "platform_version": "7.6.1810",
+    "platform_version": "7.5.1804",
     "platform_family": "rhel",
-    "uptime_seconds": 420,
-    "uptime": "7 minutes 00 seconds",
-    "idletime_seconds": 391,
-    "idletime": "6 minutes 31 seconds",
+    "uptime_seconds": 135,
+    "uptime": "2 minutes 15 seconds",
+    "idletime_seconds": 140,
+    "idletime": "2 minutes 20 seconds",
     "virtualization": {
       "systems": {
         "vbox": "guest"
@@ -639,7 +639,7 @@
       },
       "python": {
         "version": "2.7.5",
-        "builddate": "Oct 30 2018, 23:45:53"
+        "builddate": "Jul 13 2018, 13:06:57"
       },
       "ruby": {
 
@@ -656,7 +656,7 @@
       }
     },
     "dmi": {
-      "dmidecode_version": "3.1",
+      "dmidecode_version": "3.0",
       "smbios_version": "2.5",
       "structures": {
         "count": "10",
@@ -703,7 +703,7 @@
             "Product Name": "VirtualBox",
             "Version": "1.2",
             "Serial Number": "0",
-            "UUID": "3bf64aa9-1789-40e6-9a80-1458e93130d3",
+            "UUID": "C481AA0A-EC22-4F29-8BAB-480501E29B7C",
             "Wake-up Type": "Power Switch",
             "SKU Number": "Not Specified",
             "Family": "Virtual Machine"
@@ -713,7 +713,7 @@
         "product_name": "VirtualBox",
         "version": "1.2",
         "serial_number": "0",
-        "uuid": "3bf64aa9-1789-40e6-9a80-1458e93130d3",
+        "uuid": "C481AA0A-EC22-4F29-8BAB-480501E29B7C",
         "wake_up_type": "Power Switch",
         "sku_number": "Not Specified",
         "family": "Virtual Machine"
@@ -1352,12 +1352,12 @@
       "by_device": {
         "/dev/mapper/centos-root": {
           "kb_size": "42954248",
-          "kb_used": "1662664",
-          "kb_available": "41291584",
-          "percent_used": "4%",
+          "kb_used": "1760888",
+          "kb_available": "41193360",
+          "percent_used": "5%",
           "total_inodes": "21487616",
-          "inodes_used": "64924",
-          "inodes_available": "21422692",
+          "inodes_used": "59272",
+          "inodes_available": "21428344",
           "inodes_percent_used": "1%",
           "fs_type": "xfs",
           "mount_options": [
@@ -1379,8 +1379,8 @@
           "kb_available": "1928708",
           "percent_used": "0%",
           "total_inodes": "482177",
-          "inodes_used": "392",
-          "inodes_available": "481785",
+          "inodes_used": "376",
+          "inodes_available": "481801",
           "inodes_percent_used": "1%",
           "fs_type": "devtmpfs",
           "mount_options": [
@@ -1448,12 +1448,12 @@
         },
         "/dev/sda1": {
           "kb_size": "1038336",
-          "kb_used": "176864",
-          "kb_available": "861472",
-          "percent_used": "18%",
+          "kb_used": "145048",
+          "kb_available": "893288",
+          "percent_used": "14%",
           "total_inodes": "524288",
-          "inodes_used": "334",
-          "inodes_available": "523954",
+          "inodes_used": "327",
+          "inodes_available": "523961",
           "inodes_percent_used": "1%",
           "fs_type": "xfs",
           "mount_options": [
@@ -1471,8 +1471,8 @@
         },
         "vagrant": {
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1484,8 +1484,8 @@
         },
         "v-csr-2ff2664ce": {
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1503,8 +1503,8 @@
         },
         "v-csn-142ab7b97": {
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1522,8 +1522,8 @@
         },
         "v-csdb-865ba0422": {
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1541,8 +1541,8 @@
         },
         "v-csc-aee3e5835": {
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1623,20 +1623,20 @@
             "noexec",
             "relatime",
             "seclabel",
-            "blkio"
+            "freezer"
           ],
           "mounts": [
             "/sys/fs/cgroup/systemd",
             "/sys/fs/cgroup/memory",
-            "/sys/fs/cgroup/net_cls,net_prio",
-            "/sys/fs/cgroup/freezer",
-            "/sys/fs/cgroup/cpu,cpuacct",
-            "/sys/fs/cgroup/pids",
-            "/sys/fs/cgroup/perf_event",
-            "/sys/fs/cgroup/cpuset",
-            "/sys/fs/cgroup/hugetlb",
             "/sys/fs/cgroup/devices",
-            "/sys/fs/cgroup/blkio"
+            "/sys/fs/cgroup/blkio",
+            "/sys/fs/cgroup/hugetlb",
+            "/sys/fs/cgroup/net_cls,net_prio",
+            "/sys/fs/cgroup/cpu,cpuacct",
+            "/sys/fs/cgroup/perf_event",
+            "/sys/fs/cgroup/pids",
+            "/sys/fs/cgroup/cpuset",
+            "/sys/fs/cgroup/freezer"
           ]
         },
         "pstore": {
@@ -1672,15 +1672,31 @@
             "/sys/fs/selinux"
           ]
         },
-        "mqueue": {
-          "fs_type": "mqueue",
+        "systemd-1": {
+          "fs_type": "autofs",
           "mount_options": [
             "rw",
             "relatime",
-            "seclabel"
+            "fd=30",
+            "pgrp=1",
+            "timeout=0",
+            "minproto=5",
+            "maxproto=5",
+            "direct",
+            "pipe_ino=8980"
           ],
           "mounts": [
-            "/dev/mqueue"
+            "/proc/sys/fs/binfmt_misc"
+          ]
+        },
+        "debugfs": {
+          "fs_type": "debugfs",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ],
+          "mounts": [
+            "/sys/kernel/debug"
           ]
         },
         "hugetlbfs": {
@@ -1694,14 +1710,15 @@
             "/dev/hugepages"
           ]
         },
-        "debugfs": {
-          "fs_type": "debugfs",
+        "mqueue": {
+          "fs_type": "mqueue",
           "mount_options": [
             "rw",
-            "relatime"
+            "relatime",
+            "seclabel"
           ],
           "mounts": [
-            "/sys/kernel/debug"
+            "/dev/mqueue"
           ]
         },
         "sunrpc": {
@@ -1723,23 +1740,6 @@
           ],
           "mounts": [
             "/vagrant"
-          ]
-        },
-        "systemd-1": {
-          "fs_type": "autofs",
-          "mount_options": [
-            "rw",
-            "relatime",
-            "fd=27",
-            "pgrp=1",
-            "timeout=0",
-            "minproto=5",
-            "maxproto=5",
-            "direct",
-            "pipe_ino=43956"
-          ],
-          "mounts": [
-            "/proc/sys/fs/binfmt_misc"
           ]
         },
         "/dev/sda": {
@@ -1766,21 +1766,6 @@
 
           ]
         },
-        "/dev/sdb1": {
-          "mounts": [
-
-          ]
-        },
-        "/dev/sdb2": {
-          "mounts": [
-
-          ]
-        },
-        "/dev/sdb3": {
-          "mounts": [
-
-          ]
-        },
         "/dev/sr0": {
           "fs_type": "iso9660",
           "uuid": "2019-01-25-18-43-09-09",
@@ -1802,12 +1787,12 @@
       "by_mountpoint": {
         "/": {
           "kb_size": "42954248",
-          "kb_used": "1662664",
-          "kb_available": "41291584",
-          "percent_used": "4%",
+          "kb_used": "1760888",
+          "kb_available": "41193360",
+          "percent_used": "5%",
           "total_inodes": "21487616",
-          "inodes_used": "64924",
-          "inodes_available": "21422692",
+          "inodes_used": "59272",
+          "inodes_available": "21428344",
           "inodes_percent_used": "1%",
           "fs_type": "rootfs",
           "mount_options": [
@@ -1825,8 +1810,8 @@
           "kb_available": "1928708",
           "percent_used": "0%",
           "total_inodes": "482177",
-          "inodes_used": "392",
-          "inodes_available": "481785",
+          "inodes_used": "376",
+          "inodes_available": "481801",
           "inodes_percent_used": "1%",
           "fs_type": "devtmpfs",
           "mount_options": [
@@ -1863,12 +1848,12 @@
         },
         "/run": {
           "kb_size": "1940492",
-          "kb_used": "8748",
-          "kb_available": "1931744",
+          "kb_used": "8744",
+          "kb_available": "1931748",
           "percent_used": "1%",
           "total_inodes": "485123",
-          "inodes_used": "518",
-          "inodes_available": "484605",
+          "inodes_used": "492",
+          "inodes_available": "484631",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -1929,12 +1914,12 @@
         },
         "/boot": {
           "kb_size": "1038336",
-          "kb_used": "176864",
-          "kb_available": "861472",
-          "percent_used": "18%",
+          "kb_used": "145048",
+          "kb_available": "893288",
+          "percent_used": "14%",
           "total_inodes": "524288",
-          "inodes_used": "334",
-          "inodes_available": "523954",
+          "inodes_used": "327",
+          "inodes_available": "523961",
           "inodes_percent_used": "1%",
           "fs_type": "xfs",
           "mount_options": [
@@ -1977,8 +1962,8 @@
         },
         "/vagrant": {
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -1997,8 +1982,8 @@
         },
         "/tmp/vagrant-chef/9a61dd26aaabb6080df6cdb387ab155c/roles": {
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -2016,8 +2001,8 @@
         },
         "/tmp/vagrant-chef/f8b72edf70a1144891c8b8706dd6bb15/nodes": {
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -2035,8 +2020,8 @@
         },
         "/tmp/vagrant-chef/dd5da46a0198188e76cc380cb797c525/data_bags": {
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -2054,8 +2039,8 @@
         },
         "/tmp/vagrant-chef/d70c14029930c54a88189d95ba27cb47/cookbooks": {
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "total_inodes": "1000",
           "inodes_used": "0",
@@ -2172,113 +2157,6 @@
             "cgroup"
           ]
         },
-        "/sys/fs/cgroup/net_cls,net_prio": {
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "net_prio",
-            "net_cls"
-          ],
-          "devices": [
-            "cgroup"
-          ]
-        },
-        "/sys/fs/cgroup/freezer": {
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "freezer"
-          ],
-          "devices": [
-            "cgroup"
-          ]
-        },
-        "/sys/fs/cgroup/cpu,cpuacct": {
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "cpuacct",
-            "cpu"
-          ],
-          "devices": [
-            "cgroup"
-          ]
-        },
-        "/sys/fs/cgroup/pids": {
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "pids"
-          ],
-          "devices": [
-            "cgroup"
-          ]
-        },
-        "/sys/fs/cgroup/perf_event": {
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "perf_event"
-          ],
-          "devices": [
-            "cgroup"
-          ]
-        },
-        "/sys/fs/cgroup/cpuset": {
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "cpuset"
-          ],
-          "devices": [
-            "cgroup"
-          ]
-        },
-        "/sys/fs/cgroup/hugetlb": {
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "hugetlb"
-          ],
-          "devices": [
-            "cgroup"
-          ]
-        },
         "/sys/fs/cgroup/devices": {
           "fs_type": "cgroup",
           "mount_options": [
@@ -2309,6 +2187,113 @@
             "cgroup"
           ]
         },
+        "/sys/fs/cgroup/hugetlb": {
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "hugetlb"
+          ],
+          "devices": [
+            "cgroup"
+          ]
+        },
+        "/sys/fs/cgroup/net_cls,net_prio": {
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "net_prio",
+            "net_cls"
+          ],
+          "devices": [
+            "cgroup"
+          ]
+        },
+        "/sys/fs/cgroup/cpu,cpuacct": {
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "cpuacct",
+            "cpu"
+          ],
+          "devices": [
+            "cgroup"
+          ]
+        },
+        "/sys/fs/cgroup/perf_event": {
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "perf_event"
+          ],
+          "devices": [
+            "cgroup"
+          ]
+        },
+        "/sys/fs/cgroup/pids": {
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "pids"
+          ],
+          "devices": [
+            "cgroup"
+          ]
+        },
+        "/sys/fs/cgroup/cpuset": {
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "cpuset"
+          ],
+          "devices": [
+            "cgroup"
+          ]
+        },
+        "/sys/fs/cgroup/freezer": {
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "freezer"
+          ],
+          "devices": [
+            "cgroup"
+          ]
+        },
         "/sys/kernel/config": {
           "fs_type": "configfs",
           "mount_options": [
@@ -2329,15 +2314,31 @@
             "selinuxfs"
           ]
         },
-        "/dev/mqueue": {
-          "fs_type": "mqueue",
+        "/proc/sys/fs/binfmt_misc": {
+          "fs_type": "autofs",
           "mount_options": [
             "rw",
             "relatime",
-            "seclabel"
+            "fd=30",
+            "pgrp=1",
+            "timeout=0",
+            "minproto=5",
+            "maxproto=5",
+            "direct",
+            "pipe_ino=8980"
           ],
           "devices": [
-            "mqueue"
+            "systemd-1"
+          ]
+        },
+        "/sys/kernel/debug": {
+          "fs_type": "debugfs",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ],
+          "devices": [
+            "debugfs"
           ]
         },
         "/dev/hugepages": {
@@ -2351,14 +2352,15 @@
             "hugetlbfs"
           ]
         },
-        "/sys/kernel/debug": {
-          "fs_type": "debugfs",
+        "/dev/mqueue": {
+          "fs_type": "mqueue",
           "mount_options": [
             "rw",
-            "relatime"
+            "relatime",
+            "seclabel"
           ],
           "devices": [
-            "debugfs"
+            "mqueue"
           ]
         },
         "/var/lib/nfs/rpc_pipefs": {
@@ -2370,36 +2372,19 @@
           "devices": [
             "sunrpc"
           ]
-        },
-        "/proc/sys/fs/binfmt_misc": {
-          "fs_type": "autofs",
-          "mount_options": [
-            "rw",
-            "relatime",
-            "fd=27",
-            "pgrp=1",
-            "timeout=0",
-            "minproto=5",
-            "maxproto=5",
-            "direct",
-            "pipe_ino=43956"
-          ],
-          "devices": [
-            "systemd-1"
-          ]
         }
       },
       "by_pair": {
         "/dev/mapper/centos-root,/": {
           "device": "/dev/mapper/centos-root",
           "kb_size": "42954248",
-          "kb_used": "1662664",
-          "kb_available": "41291584",
-          "percent_used": "4%",
+          "kb_used": "1760888",
+          "kb_available": "41193360",
+          "percent_used": "5%",
           "mount": "/",
           "total_inodes": "21487616",
-          "inodes_used": "64924",
-          "inodes_available": "21422692",
+          "inodes_used": "59272",
+          "inodes_available": "21428344",
           "inodes_percent_used": "1%",
           "fs_type": "xfs",
           "mount_options": [
@@ -2420,8 +2405,8 @@
           "percent_used": "0%",
           "mount": "/dev",
           "total_inodes": "482177",
-          "inodes_used": "392",
-          "inodes_available": "481785",
+          "inodes_used": "376",
+          "inodes_available": "481801",
           "inodes_percent_used": "1%",
           "fs_type": "devtmpfs",
           "mount_options": [
@@ -2455,13 +2440,13 @@
         "tmpfs,/run": {
           "device": "tmpfs",
           "kb_size": "1940492",
-          "kb_used": "8748",
-          "kb_available": "1931744",
+          "kb_used": "8744",
+          "kb_available": "1931748",
           "percent_used": "1%",
           "mount": "/run",
           "total_inodes": "485123",
-          "inodes_used": "518",
-          "inodes_available": "484605",
+          "inodes_used": "492",
+          "inodes_available": "484631",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -2518,13 +2503,13 @@
         "/dev/sda1,/boot": {
           "device": "/dev/sda1",
           "kb_size": "1038336",
-          "kb_used": "176864",
-          "kb_available": "861472",
-          "percent_used": "18%",
+          "kb_used": "145048",
+          "kb_available": "893288",
+          "percent_used": "14%",
           "mount": "/boot",
           "total_inodes": "524288",
-          "inodes_used": "334",
-          "inodes_available": "523954",
+          "inodes_used": "327",
+          "inodes_available": "523961",
           "inodes_percent_used": "1%",
           "fs_type": "xfs",
           "mount_options": [
@@ -2564,8 +2549,8 @@
         "vagrant,/vagrant": {
           "device": "vagrant",
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "mount": "/vagrant",
           "total_inodes": "1000",
@@ -2576,8 +2561,8 @@
         "v-csr-2ff2664ce,/tmp/vagrant-chef/9a61dd26aaabb6080df6cdb387ab155c/roles": {
           "device": "v-csr-2ff2664ce",
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "mount": "/tmp/vagrant-chef/9a61dd26aaabb6080df6cdb387ab155c/roles",
           "total_inodes": "1000",
@@ -2594,8 +2579,8 @@
         "v-csn-142ab7b97,/tmp/vagrant-chef/f8b72edf70a1144891c8b8706dd6bb15/nodes": {
           "device": "v-csn-142ab7b97",
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "mount": "/tmp/vagrant-chef/f8b72edf70a1144891c8b8706dd6bb15/nodes",
           "total_inodes": "1000",
@@ -2612,8 +2597,8 @@
         "v-csdb-865ba0422,/tmp/vagrant-chef/dd5da46a0198188e76cc380cb797c525/data_bags": {
           "device": "v-csdb-865ba0422",
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "mount": "/tmp/vagrant-chef/dd5da46a0198188e76cc380cb797c525/data_bags",
           "total_inodes": "1000",
@@ -2630,8 +2615,8 @@
         "v-csc-aee3e5835,/tmp/vagrant-chef/d70c14029930c54a88189d95ba27cb47/cookbooks": {
           "device": "v-csc-aee3e5835",
           "kb_size": "242542588",
-          "kb_used": "129665156",
-          "kb_available": "112877432",
+          "kb_used": "129251216",
+          "kb_available": "113291372",
           "percent_used": "54%",
           "mount": "/tmp/vagrant-chef/d70c14029930c54a88189d95ba27cb47/cookbooks",
           "total_inodes": "1000",
@@ -2739,106 +2724,6 @@
             "memory"
           ]
         },
-        "cgroup,/sys/fs/cgroup/net_cls,net_prio": {
-          "device": "cgroup",
-          "mount": "/sys/fs/cgroup/net_cls,net_prio",
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "net_prio",
-            "net_cls"
-          ]
-        },
-        "cgroup,/sys/fs/cgroup/freezer": {
-          "device": "cgroup",
-          "mount": "/sys/fs/cgroup/freezer",
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "freezer"
-          ]
-        },
-        "cgroup,/sys/fs/cgroup/cpu,cpuacct": {
-          "device": "cgroup",
-          "mount": "/sys/fs/cgroup/cpu,cpuacct",
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "cpuacct",
-            "cpu"
-          ]
-        },
-        "cgroup,/sys/fs/cgroup/pids": {
-          "device": "cgroup",
-          "mount": "/sys/fs/cgroup/pids",
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "pids"
-          ]
-        },
-        "cgroup,/sys/fs/cgroup/perf_event": {
-          "device": "cgroup",
-          "mount": "/sys/fs/cgroup/perf_event",
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "perf_event"
-          ]
-        },
-        "cgroup,/sys/fs/cgroup/cpuset": {
-          "device": "cgroup",
-          "mount": "/sys/fs/cgroup/cpuset",
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "cpuset"
-          ]
-        },
-        "cgroup,/sys/fs/cgroup/hugetlb": {
-          "device": "cgroup",
-          "mount": "/sys/fs/cgroup/hugetlb",
-          "fs_type": "cgroup",
-          "mount_options": [
-            "rw",
-            "nosuid",
-            "nodev",
-            "noexec",
-            "relatime",
-            "seclabel",
-            "hugetlb"
-          ]
-        },
         "cgroup,/sys/fs/cgroup/devices": {
           "device": "cgroup",
           "mount": "/sys/fs/cgroup/devices",
@@ -2867,6 +2752,106 @@
             "blkio"
           ]
         },
+        "cgroup,/sys/fs/cgroup/hugetlb": {
+          "device": "cgroup",
+          "mount": "/sys/fs/cgroup/hugetlb",
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "hugetlb"
+          ]
+        },
+        "cgroup,/sys/fs/cgroup/net_cls,net_prio": {
+          "device": "cgroup",
+          "mount": "/sys/fs/cgroup/net_cls,net_prio",
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "net_prio",
+            "net_cls"
+          ]
+        },
+        "cgroup,/sys/fs/cgroup/cpu,cpuacct": {
+          "device": "cgroup",
+          "mount": "/sys/fs/cgroup/cpu,cpuacct",
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "cpuacct",
+            "cpu"
+          ]
+        },
+        "cgroup,/sys/fs/cgroup/perf_event": {
+          "device": "cgroup",
+          "mount": "/sys/fs/cgroup/perf_event",
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "perf_event"
+          ]
+        },
+        "cgroup,/sys/fs/cgroup/pids": {
+          "device": "cgroup",
+          "mount": "/sys/fs/cgroup/pids",
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "pids"
+          ]
+        },
+        "cgroup,/sys/fs/cgroup/cpuset": {
+          "device": "cgroup",
+          "mount": "/sys/fs/cgroup/cpuset",
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "cpuset"
+          ]
+        },
+        "cgroup,/sys/fs/cgroup/freezer": {
+          "device": "cgroup",
+          "mount": "/sys/fs/cgroup/freezer",
+          "fs_type": "cgroup",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "noexec",
+            "relatime",
+            "seclabel",
+            "freezer"
+          ]
+        },
         "configfs,/sys/kernel/config": {
           "device": "configfs",
           "mount": "/sys/kernel/config",
@@ -2885,14 +2870,29 @@
             "relatime"
           ]
         },
-        "mqueue,/dev/mqueue": {
-          "device": "mqueue",
-          "mount": "/dev/mqueue",
-          "fs_type": "mqueue",
+        "systemd-1,/proc/sys/fs/binfmt_misc": {
+          "device": "systemd-1",
+          "mount": "/proc/sys/fs/binfmt_misc",
+          "fs_type": "autofs",
           "mount_options": [
             "rw",
             "relatime",
-            "seclabel"
+            "fd=30",
+            "pgrp=1",
+            "timeout=0",
+            "minproto=5",
+            "maxproto=5",
+            "direct",
+            "pipe_ino=8980"
+          ]
+        },
+        "debugfs,/sys/kernel/debug": {
+          "device": "debugfs",
+          "mount": "/sys/kernel/debug",
+          "fs_type": "debugfs",
+          "mount_options": [
+            "rw",
+            "relatime"
           ]
         },
         "hugetlbfs,/dev/hugepages": {
@@ -2905,13 +2905,14 @@
             "seclabel"
           ]
         },
-        "debugfs,/sys/kernel/debug": {
-          "device": "debugfs",
-          "mount": "/sys/kernel/debug",
-          "fs_type": "debugfs",
+        "mqueue,/dev/mqueue": {
+          "device": "mqueue",
+          "mount": "/dev/mqueue",
+          "fs_type": "mqueue",
           "mount_options": [
             "rw",
-            "relatime"
+            "relatime",
+            "seclabel"
           ]
         },
         "sunrpc,/var/lib/nfs/rpc_pipefs": {
@@ -2933,22 +2934,6 @@
             "relatime"
           ]
         },
-        "systemd-1,/proc/sys/fs/binfmt_misc": {
-          "device": "systemd-1",
-          "mount": "/proc/sys/fs/binfmt_misc",
-          "fs_type": "autofs",
-          "mount_options": [
-            "rw",
-            "relatime",
-            "fd=27",
-            "pgrp=1",
-            "timeout=0",
-            "minproto=5",
-            "maxproto=5",
-            "direct",
-            "pipe_ino=43956"
-          ]
-        },
         "/dev/sda,": {
           "device": "/dev/sda"
         },
@@ -2964,15 +2949,6 @@
         },
         "/dev/sdb,": {
           "device": "/dev/sdb"
-        },
-        "/dev/sdb1,": {
-          "device": "/dev/sdb1"
-        },
-        "/dev/sdb2,": {
-          "device": "/dev/sdb2"
-        },
-        "/dev/sdb3,": {
-          "device": "/dev/sdb3"
         },
         "/dev/sr0,": {
           "device": "/dev/sr0",
@@ -3082,7 +3058,7 @@
       "icon_name": "computer-vm",
       "chassis": "vm",
       "machine_id": "b8ae4e7c6e42490b801633d8d903c9a0",
-      "boot_id": "d5145ee2c9ad40d08f29958cecbf65b0",
+      "boot_id": "284647acaf2b47c5acd5c7257cc02fd7",
       "virtualization": "kvm",
       "operating_system": "CentOS Linux 7 (Core)",
       "cpe_os_name": "cpe",
@@ -3131,21 +3107,21 @@
       "search-state-factory": "/usr/local/share/factory/var",
       "search-configuration": "/root/.config"
     },
-    "ohai_time": 1551806086.9884324,
+    "ohai_time": 1551825439.3120306,
     "packages": {
-      "kpartx": {
-        "epoch": "0",
-        "version": "0.4.9",
-        "release": "123.el7",
-        "installdate": "1551805835",
+      "grub2-tools-minimal": {
+        "epoch": "1",
+        "version": "2.02",
+        "release": "0.65.el7.centos.2",
+        "installdate": "1535094106",
         "arch": "x86_64"
       },
-      "device-mapper-libs": {
-        "epoch": "7",
-        "version": "1.02.149",
-        "release": "10.el7_6.3",
-        "installdate": "1551805836",
-        "arch": "x86_64"
+      "firewalld-filesystem": {
+        "epoch": "0",
+        "version": "0.4.4.4",
+        "release": "14.el7",
+        "installdate": "1535094070",
+        "arch": "noarch"
       },
       "os-prober": {
         "epoch": "0",
@@ -3154,18 +3130,11 @@
         "installdate": "1535094107",
         "arch": "x86_64"
       },
-      "dbus-libs": {
-        "epoch": "1",
-        "version": "1.10.24",
-        "release": "12.el7",
-        "installdate": "1551805836",
-        "arch": "x86_64"
-      },
-      "systemd-sysv": {
+      "cronie-anacron": {
         "epoch": "0",
-        "version": "219",
-        "release": "62.el7_6.5",
-        "installdate": "1551805838",
+        "version": "1.4.11",
+        "release": "19.el7",
+        "installdate": "1535094108",
         "arch": "x86_64"
       },
       "openssh": {
@@ -3182,25 +3151,18 @@
         "installdate": "1535094075",
         "arch": "x86_64"
       },
-      "selinux-policy": {
-        "epoch": "0",
-        "version": "3.13.1",
-        "release": "229.el7_6.9",
-        "installdate": "1551805839",
-        "arch": "noarch"
-      },
-      "NetworkManager-libnm": {
+      "grub2-tools-extra": {
         "epoch": "1",
-        "version": "1.12.0",
-        "release": "8.el7_6",
-        "installdate": "1551805848",
+        "version": "2.02",
+        "release": "0.65.el7.centos.2",
+        "installdate": "1535094108",
         "arch": "x86_64"
       },
       "lvm2-libs": {
         "epoch": "7",
-        "version": "2.02.180",
-        "release": "10.el7_6.3",
-        "installdate": "1551805849",
+        "version": "2.02.177",
+        "release": "4.el7",
+        "installdate": "1535094109",
         "arch": "x86_64"
       },
       "ebtables": {
@@ -3217,25 +3179,11 @@
         "installdate": "1535094078",
         "arch": "x86_64"
       },
-      "cronie-anacron": {
-        "epoch": "0",
-        "version": "1.4.11",
-        "release": "20.el7_6",
-        "installdate": "1551805850",
-        "arch": "x86_64"
-      },
       "libcap": {
         "epoch": "0",
         "version": "2.22",
         "release": "9.el7",
         "installdate": "1535094078",
-        "arch": "x86_64"
-      },
-      "policycoreutils-devel": {
-        "epoch": "0",
-        "version": "2.5",
-        "release": "29.el7_6.1",
-        "installdate": "1551805850",
         "arch": "x86_64"
       },
       "python-slip-dbus": {
@@ -3252,13 +3200,6 @@
         "installdate": "1535094079",
         "arch": "x86_64"
       },
-      "dracut-network": {
-        "epoch": "0",
-        "version": "033",
-        "release": "554.el7",
-        "installdate": "1551805872",
-        "arch": "x86_64"
-      },
       "plymouth-scripts": {
         "epoch": "0",
         "version": "0.8.9",
@@ -3273,19 +3214,19 @@
         "installdate": "1535094079",
         "arch": "x86_64"
       },
-      "NetworkManager-team": {
-        "epoch": "1",
-        "version": "1.12.0",
-        "release": "8.el7_6",
-        "installdate": "1551805873",
-        "arch": "x86_64"
+      "bind-license": {
+        "epoch": "32",
+        "version": "9.9.4",
+        "release": "61.el7",
+        "installdate": "1535094122",
+        "arch": "noarch"
       },
-      "grub2": {
-        "epoch": "1",
-        "version": "2.02",
-        "release": "0.76.el7.centos.1",
-        "installdate": "1551805874",
-        "arch": "x86_64"
+      "kbd-misc": {
+        "epoch": "0",
+        "version": "1.15.5",
+        "release": "13.el7",
+        "installdate": "1535094123",
+        "arch": "noarch"
       },
       "xz-libs": {
         "epoch": "0",
@@ -3294,13 +3235,6 @@
         "installdate": "1535094080",
         "arch": "x86_64"
       },
-      "selinux-policy-targeted": {
-        "epoch": "0",
-        "version": "3.13.1",
-        "release": "229.el7_6.9",
-        "installdate": "1551805880",
-        "arch": "noarch"
-      },
       "libdb": {
         "epoch": "0",
         "version": "5.3.21",
@@ -3308,25 +3242,11 @@
         "installdate": "1535094081",
         "arch": "x86_64"
       },
-      "rsyslog": {
-        "epoch": "0",
-        "version": "8.24.0",
-        "release": "34.el7",
-        "installdate": "1551805894",
-        "arch": "x86_64"
-      },
       "libcap-ng": {
         "epoch": "0",
         "version": "0.7.5",
         "release": "4.el7",
         "installdate": "1535094081",
-        "arch": "x86_64"
-      },
-      "libdrm": {
-        "epoch": "0",
-        "version": "2.4.91",
-        "release": "3.el7",
-        "installdate": "1551805898",
         "arch": "x86_64"
       },
       "openssh-server": {
@@ -3343,13 +3263,6 @@
         "installdate": "1535094081",
         "arch": "x86_64"
       },
-      "sg3_utils": {
-        "epoch": "0",
-        "version": "1.37",
-        "release": "17.el7",
-        "installdate": "1551805899",
-        "arch": "x86_64"
-      },
       "authconfig": {
         "epoch": "0",
         "version": "6.2.8",
@@ -3362,20 +3275,6 @@
         "version": "2.11",
         "release": "27.el7",
         "installdate": "1535094081",
-        "arch": "x86_64"
-      },
-      "gobject-introspection": {
-        "epoch": "0",
-        "version": "1.56.1",
-        "release": "1.el7",
-        "installdate": "1551805899",
-        "arch": "x86_64"
-      },
-      "wget": {
-        "epoch": "0",
-        "version": "1.14",
-        "release": "18.el7",
-        "installdate": "1551805900",
         "arch": "x86_64"
       },
       "chrony": {
@@ -3392,17 +3291,24 @@
         "installdate": "1535094082",
         "arch": "x86_64"
       },
-      "dmidecode": {
-        "epoch": "1",
-        "version": "3.1",
-        "release": "2.el7",
-        "installdate": "1551805900",
+      "iprutils": {
+        "epoch": "0",
+        "version": "2.4.15.1",
+        "release": "1.el7",
+        "installdate": "1535094130",
         "arch": "x86_64"
       },
       "make": {
         "epoch": "1",
         "version": "3.82",
         "release": "23.el7",
+        "installdate": "1535094083",
+        "arch": "x86_64"
+      },
+      "file-libs": {
+        "epoch": "0",
+        "version": "5.11",
+        "release": "33.el7",
         "installdate": "1535094083",
         "arch": "x86_64"
       },
@@ -3434,11 +3340,32 @@
         "installdate": "1535094083",
         "arch": "noarch"
       },
+      "perl-macros": {
+        "epoch": "4",
+        "version": "5.16.3",
+        "release": "292.el7",
+        "installdate": "1535094083",
+        "arch": "x86_64"
+      },
+      "libuuid": {
+        "epoch": "0",
+        "version": "2.23.2",
+        "release": "52.el7_5.1",
+        "installdate": "1535094395",
+        "arch": "x86_64"
+      },
       "perl-Filter": {
         "epoch": "0",
         "version": "1.49",
         "release": "3.el7",
         "installdate": "1535094084",
+        "arch": "x86_64"
+      },
+      "centos-release": {
+        "epoch": "0",
+        "version": "7",
+        "release": "5.1804.4.el7.centos",
+        "installdate": "1535094395",
         "arch": "x86_64"
       },
       "perl-threads-shared": {
@@ -3448,6 +3375,13 @@
         "installdate": "1535094084",
         "arch": "x86_64"
       },
+      "procps-ng": {
+        "epoch": "0",
+        "version": "3.3.10",
+        "release": "17.el7_5.2",
+        "installdate": "1535094398",
+        "arch": "x86_64"
+      },
       "perl-File-Temp": {
         "epoch": "0",
         "version": "0.23.01",
@@ -3455,12 +3389,26 @@
         "installdate": "1535094084",
         "arch": "noarch"
       },
+      "python-libs": {
+        "epoch": "0",
+        "version": "2.7.5",
+        "release": "69.el7_5",
+        "installdate": "1535094406",
+        "arch": "x86_64"
+      },
       "perl-Getopt-Long": {
         "epoch": "0",
         "version": "2.40",
         "release": "3.el7",
         "installdate": "1535094084",
         "arch": "noarch"
+      },
+      "libss": {
+        "epoch": "0",
+        "version": "1.42.9",
+        "release": "12.el7_5",
+        "installdate": "1535094406",
+        "arch": "x86_64"
       },
       "python-decorator": {
         "epoch": "0",
@@ -3483,6 +3431,13 @@
         "installdate": "1535094088",
         "arch": "x86_64"
       },
+      "NetworkManager": {
+        "epoch": "1",
+        "version": "1.10.2",
+        "release": "16.el7_5",
+        "installdate": "1535094407",
+        "arch": "x86_64"
+      },
       "libnl3-cli": {
         "epoch": "0",
         "version": "3.2.28",
@@ -3497,11 +3452,39 @@
         "installdate": "1535094408",
         "arch": "x86_64"
       },
+      "kpartx": {
+        "epoch": "0",
+        "version": "0.4.9",
+        "release": "119.el7_5.1",
+        "installdate": "1535094409",
+        "arch": "x86_64"
+      },
+      "libtirpc": {
+        "epoch": "0",
+        "version": "0.2.4",
+        "release": "0.10.el7",
+        "installdate": "1535094088",
+        "arch": "x86_64"
+      },
+      "linux-firmware": {
+        "epoch": "0",
+        "version": "20180220",
+        "release": "62.2.git6d51311.el7_5",
+        "installdate": "1535094415",
+        "arch": "noarch"
+      },
       "libedit": {
         "epoch": "0",
         "version": "3.0",
         "release": "12.20121213cvs.el7",
         "installdate": "1535094089",
+        "arch": "x86_64"
+      },
+      "dracut-config-rescue": {
+        "epoch": "0",
+        "version": "033",
+        "release": "535.el7_5.1",
+        "installdate": "1535094420",
         "arch": "x86_64"
       },
       "newt": {
@@ -3511,6 +3494,13 @@
         "installdate": "1535094090",
         "arch": "x86_64"
       },
+      "NetworkManager-tui": {
+        "epoch": "1",
+        "version": "1.10.2",
+        "release": "16.el7_5",
+        "installdate": "1535094421",
+        "arch": "x86_64"
+      },
       "libnfnetlink": {
         "epoch": "0",
         "version": "1.0.1",
@@ -3518,11 +3508,46 @@
         "installdate": "1535094090",
         "arch": "x86_64"
       },
+      "tuned": {
+        "epoch": "0",
+        "version": "2.9.0",
+        "release": "1.el7_5.2",
+        "installdate": "1535094421",
+        "arch": "noarch"
+      },
+      "libref_array": {
+        "epoch": "0",
+        "version": "0.1.5",
+        "release": "29.el7",
+        "installdate": "1535094090",
+        "arch": "x86_64"
+      },
+      "qemu-guest-agent": {
+        "epoch": "10",
+        "version": "2.8.0",
+        "release": "2.el7_5.1",
+        "installdate": "1535094443",
+        "arch": "x86_64"
+      },
+      "tzdata": {
+        "epoch": "0",
+        "version": "2018e",
+        "release": "3.el7",
+        "installdate": "1535094445",
+        "arch": "noarch"
+      },
       "gettext": {
         "epoch": "0",
         "version": "0.19.8.1",
         "release": "2.el7",
         "installdate": "1535094091",
+        "arch": "x86_64"
+      },
+      "iptables": {
+        "epoch": "0",
+        "version": "1.4.21",
+        "release": "24.1.el7_5",
+        "installdate": "1535094460",
         "arch": "x86_64"
       },
       "libxml2-python": {
@@ -3532,11 +3557,18 @@
         "installdate": "1535094657",
         "arch": "x86_64"
       },
+      "python-linux-procfs": {
+        "epoch": "0",
+        "version": "0.4.9",
+        "release": "3.el7",
+        "installdate": "1535094092",
+        "arch": "noarch"
+      },
       "glibc-common": {
         "epoch": "0",
         "version": "2.17",
         "release": "260.el7_6.3",
-        "installdate": "1551805719",
+        "installdate": "1551825348",
         "arch": "x86_64"
       },
       "pyliblzma": {
@@ -3550,7 +3582,7 @@
         "epoch": "4",
         "version": "5.16.3",
         "release": "294.el7_6",
-        "installdate": "1551805724",
+        "installdate": "1551825353",
         "arch": "x86_64"
       },
       "python-IPy": {
@@ -3564,28 +3596,28 @@
         "epoch": "0",
         "version": "2.17",
         "release": "260.el7_6.3",
-        "installdate": "1551805728",
+        "installdate": "1551825357",
         "arch": "x86_64"
       },
-      "bash": {
+      "gobject-introspection": {
         "epoch": "0",
-        "version": "4.2.46",
-        "release": "31.el7",
-        "installdate": "1551805814",
+        "version": "1.50.0",
+        "release": "1.el7",
+        "installdate": "1535094092",
         "arch": "x86_64"
       },
-      "libcom_err": {
+      "libcurl": {
         "epoch": "0",
-        "version": "1.42.9",
-        "release": "13.el7",
-        "installdate": "1551805814",
+        "version": "7.29.0",
+        "release": "51.el7",
+        "installdate": "1551825424",
         "arch": "x86_64"
       },
-      "coreutils": {
+      "setools-libs": {
         "epoch": "0",
-        "version": "8.22",
-        "release": "23.el7",
-        "installdate": "1551805815",
+        "version": "3.3.8",
+        "release": "2.el7",
+        "installdate": "1535094092",
         "arch": "x86_64"
       },
       "fipscheck": {
@@ -3595,18 +3627,11 @@
         "installdate": "1535094099",
         "arch": "x86_64"
       },
-      "elfutils-libelf": {
+      "rpm-libs": {
         "epoch": "0",
-        "version": "0.172",
-        "release": "2.el7",
-        "installdate": "1551805816",
-        "arch": "x86_64"
-      },
-      "glib2": {
-        "epoch": "0",
-        "version": "2.56.1",
-        "release": "2.el7",
-        "installdate": "1551805816",
+        "version": "4.11.3",
+        "release": "32.el7",
+        "installdate": "1535094100",
         "arch": "x86_64"
       },
       "libnfsidmap": {
@@ -3616,25 +3641,11 @@
         "installdate": "1535094100",
         "arch": "x86_64"
       },
-      "findutils": {
-        "epoch": "1",
-        "version": "4.5.11",
-        "release": "6.el7",
-        "installdate": "1551805819",
-        "arch": "x86_64"
-      },
       "keyutils": {
         "epoch": "0",
         "version": "1.5.8",
         "release": "3.el7",
         "installdate": "1535094100",
-        "arch": "x86_64"
-      },
-      "shadow-utils": {
-        "epoch": "2",
-        "version": "4.1.5.1",
-        "release": "25.el7",
-        "installdate": "1551805819",
         "arch": "x86_64"
       },
       "acl": {
@@ -3644,13 +3655,6 @@
         "installdate": "1535094101",
         "arch": "x86_64"
       },
-      "libref_array": {
-        "epoch": "0",
-        "version": "0.1.5",
-        "release": "32.el7",
-        "installdate": "1551805819",
-        "arch": "x86_64"
-      },
       "snappy": {
         "epoch": "0",
         "version": "1.1.0",
@@ -3658,46 +3662,18 @@
         "installdate": "1535094101",
         "arch": "x86_64"
       },
-      "setools-libs": {
+      "libpath_utils": {
         "epoch": "0",
-        "version": "3.3.8",
-        "release": "4.el7",
-        "installdate": "1551805820",
+        "version": "0.2.1",
+        "release": "29.el7",
+        "installdate": "1535094101",
         "arch": "x86_64"
-      },
-      "python-linux-procfs": {
-        "epoch": "0",
-        "version": "0.4.9",
-        "release": "4.el7",
-        "installdate": "1551805820",
-        "arch": "noarch"
-      },
-      "grub2-pc-modules": {
-        "epoch": "1",
-        "version": "2.02",
-        "release": "0.76.el7.centos.1",
-        "installdate": "1551805821",
-        "arch": "noarch"
       },
       "pygpgme": {
         "epoch": "0",
         "version": "0.3",
         "release": "9.el7",
         "installdate": "1535094102",
-        "arch": "x86_64"
-      },
-      "nss-pem": {
-        "epoch": "0",
-        "version": "1.0.3",
-        "release": "5.el7",
-        "installdate": "1551805821",
-        "arch": "x86_64"
-      },
-      "libcurl": {
-        "epoch": "0",
-        "version": "7.29.0",
-        "release": "51.el7",
-        "installdate": "1551805822",
         "arch": "x86_64"
       },
       "lsscsi": {
@@ -3707,26 +3683,12 @@
         "installdate": "1535094103",
         "arch": "x86_64"
       },
-      "openldap": {
-        "epoch": "0",
-        "version": "2.4.44",
-        "release": "21.el7_6",
-        "installdate": "1551805822",
-        "arch": "x86_64"
-      },
       "device-mapper-persistent-data": {
         "epoch": "0",
         "version": "0.7.3",
         "release": "3.el7",
         "installdate": "1535094103",
         "arch": "x86_64"
-      },
-      "yum": {
-        "epoch": "0",
-        "version": "3.4.3",
-        "release": "161.el7.centos",
-        "installdate": "1551805823",
-        "arch": "noarch"
       },
       "ustr": {
         "epoch": "0",
@@ -3735,51 +3697,44 @@
         "installdate": "1535094103",
         "arch": "x86_64"
       },
-      "libss": {
+      "libsemanage-python": {
         "epoch": "0",
-        "version": "1.42.9",
-        "release": "13.el7",
-        "installdate": "1551805823",
+        "version": "2.5",
+        "release": "11.el7",
+        "installdate": "1535094103",
         "arch": "x86_64"
       },
-      "freetype": {
+      "cryptsetup-libs": {
         "epoch": "0",
-        "version": "2.8",
-        "release": "12.el7_6.1",
-        "installdate": "1551805823",
+        "version": "1.7.4",
+        "release": "4.el7",
+        "installdate": "1535094104",
         "arch": "x86_64"
       },
-      "json-c": {
+      "elfutils-default-yama-scope": {
         "epoch": "0",
-        "version": "0.11",
-        "release": "4.el7_0",
-        "installdate": "1551805833",
-        "arch": "x86_64"
-      },
-      "sg3_utils-libs": {
-        "epoch": "0",
-        "version": "1.37",
-        "release": "17.el7",
-        "installdate": "1551805833",
-        "arch": "x86_64"
-      },
-      "libfastjson": {
-        "epoch": "0",
-        "version": "0.99.4",
-        "release": "3.el7",
-        "installdate": "1551805834",
-        "arch": "x86_64"
-      },
-      "libsmartcols": {
-        "epoch": "0",
-        "version": "2.23.2",
-        "release": "59.el7",
-        "installdate": "1551805834",
-        "arch": "x86_64"
+        "version": "0.170",
+        "release": "4.el7",
+        "installdate": "1535094106",
+        "arch": "noarch"
       },
       "polkit-pkla-compat": {
         "epoch": "0",
         "version": "0.1",
+        "release": "4.el7",
+        "installdate": "1535094106",
+        "arch": "x86_64"
+      },
+      "grub2-pc-modules": {
+        "epoch": "1",
+        "version": "2.02",
+        "release": "0.65.el7.centos.2",
+        "installdate": "1535094070",
+        "arch": "noarch"
+      },
+      "device-mapper-event-libs": {
+        "epoch": "7",
+        "version": "1.02.146",
         "release": "4.el7",
         "installdate": "1535094106",
         "arch": "x86_64"
@@ -3791,12 +3746,47 @@
         "installdate": "1535094070",
         "arch": "noarch"
       },
+      "rpcbind": {
+        "epoch": "0",
+        "version": "0.2.0",
+        "release": "44.el7",
+        "installdate": "1535094107",
+        "arch": "x86_64"
+      },
+      "kbd-legacy": {
+        "epoch": "0",
+        "version": "1.15.5",
+        "release": "13.el7",
+        "installdate": "1535094071",
+        "arch": "noarch"
+      },
+      "grub2-tools": {
+        "epoch": "1",
+        "version": "2.02",
+        "release": "0.65.el7.centos.2",
+        "installdate": "1535094107",
+        "arch": "x86_64"
+      },
       "crontabs": {
         "epoch": "0",
         "version": "1.11",
         "release": "6.20121102git.el7",
         "installdate": "1535094108",
         "arch": "noarch"
+      },
+      "bash": {
+        "epoch": "0",
+        "version": "4.2.46",
+        "release": "30.el7",
+        "installdate": "1535094072",
+        "arch": "x86_64"
+      },
+      "cronie": {
+        "epoch": "0",
+        "version": "1.4.11",
+        "release": "19.el7",
+        "installdate": "1535094108",
+        "arch": "x86_64"
       },
       "chkconfig": {
         "epoch": "0",
@@ -3805,6 +3795,13 @@
         "installdate": "1535094072",
         "arch": "x86_64"
       },
+      "setup": {
+        "epoch": "0",
+        "version": "2.8.71",
+        "release": "9.el7",
+        "installdate": "1535094075",
+        "arch": "noarch"
+      },
       "basesystem": {
         "epoch": "0",
         "version": "10.0",
@@ -3812,11 +3809,46 @@
         "installdate": "1535094075",
         "arch": "noarch"
       },
+      "libdrm": {
+        "epoch": "0",
+        "version": "2.4.83",
+        "release": "2.el7",
+        "installdate": "1535094108",
+        "arch": "x86_64"
+      },
+      "zlib": {
+        "epoch": "0",
+        "version": "1.2.7",
+        "release": "17.el7",
+        "installdate": "1535094078",
+        "arch": "x86_64"
+      },
+      "grub2-pc": {
+        "epoch": "1",
+        "version": "2.02",
+        "release": "0.65.el7.centos.2",
+        "installdate": "1535094108",
+        "arch": "x86_64"
+      },
+      "device-mapper-event": {
+        "epoch": "7",
+        "version": "1.02.146",
+        "release": "4.el7",
+        "installdate": "1535094109",
+        "arch": "x86_64"
+      },
       "popt": {
         "epoch": "0",
         "version": "1.13",
         "release": "16.el7",
         "installdate": "1535094078",
+        "arch": "x86_64"
+      },
+      "wpa_supplicant": {
+        "epoch": "1",
+        "version": "2.6",
+        "release": "9.el7",
+        "installdate": "1535094109",
         "arch": "x86_64"
       },
       "ncurses-libs": {
@@ -3826,6 +3858,27 @@
         "installdate": "1535094078",
         "arch": "x86_64"
       },
+      "gssproxy": {
+        "epoch": "0",
+        "version": "0.7.0",
+        "release": "17.el7",
+        "installdate": "1535094109",
+        "arch": "x86_64"
+      },
+      "libsepol": {
+        "epoch": "0",
+        "version": "2.5",
+        "release": "8.1.el7",
+        "installdate": "1535094078",
+        "arch": "x86_64"
+      },
+      "libcgroup": {
+        "epoch": "0",
+        "version": "0.41",
+        "release": "15.el7",
+        "installdate": "1535094109",
+        "arch": "x86_64"
+      },
       "libffi": {
         "epoch": "0",
         "version": "3.0.13",
@@ -3833,11 +3886,25 @@
         "installdate": "1535094078",
         "arch": "x86_64"
       },
+      "policycoreutils-devel": {
+        "epoch": "0",
+        "version": "2.5",
+        "release": "22.el7",
+        "installdate": "1535094110",
+        "arch": "x86_64"
+      },
       "libacl": {
         "epoch": "0",
         "version": "2.2.51",
         "release": "14.el7",
         "installdate": "1535094078",
+        "arch": "x86_64"
+      },
+      "teamd": {
+        "epoch": "0",
+        "version": "1.27",
+        "release": "4.el7",
+        "installdate": "1535094122",
         "arch": "x86_64"
       },
       "gmp": {
@@ -3853,6 +3920,20 @@
         "release": "9.el7",
         "installdate": "1535094122",
         "arch": "x86_64"
+      },
+      "libselinux": {
+        "epoch": "0",
+        "version": "2.5",
+        "release": "12.el7",
+        "installdate": "1535094079",
+        "arch": "x86_64"
+      },
+      "python-firewall": {
+        "epoch": "0",
+        "version": "0.4.4.4",
+        "release": "14.el7",
+        "installdate": "1535094122",
+        "arch": "noarch"
       },
       "grep": {
         "epoch": "0",
@@ -3896,6 +3977,27 @@
         "installdate": "1535094122",
         "arch": "x86_64"
       },
+      "bind-libs-lite": {
+        "epoch": "32",
+        "version": "9.9.4",
+        "release": "61.el7",
+        "installdate": "1535094122",
+        "arch": "x86_64"
+      },
+      "openssl-libs": {
+        "epoch": "1",
+        "version": "1.0.2k",
+        "release": "12.el7",
+        "installdate": "1535094080",
+        "arch": "x86_64"
+      },
+      "kbd": {
+        "epoch": "0",
+        "version": "1.15.5",
+        "release": "13.el7",
+        "installdate": "1535094123",
+        "arch": "x86_64"
+      },
       "bzip2-libs": {
         "epoch": "0",
         "version": "1.0.6",
@@ -3903,11 +4005,39 @@
         "installdate": "1535094080",
         "arch": "x86_64"
       },
+      "firewalld": {
+        "epoch": "0",
+        "version": "0.4.4.4",
+        "release": "14.el7",
+        "installdate": "1535094124",
+        "arch": "noarch"
+      },
       "readline": {
         "epoch": "0",
         "version": "6.2",
         "release": "10.el7",
         "installdate": "1535094081",
+        "arch": "x86_64"
+      },
+      "nfs-utils": {
+        "epoch": "1",
+        "version": "1.3.0",
+        "release": "0.54.el7",
+        "installdate": "1535094124",
+        "arch": "x86_64"
+      },
+      "elfutils-libelf": {
+        "epoch": "0",
+        "version": "0.170",
+        "release": "4.el7",
+        "installdate": "1535094081",
+        "arch": "x86_64"
+      },
+      "lvm2": {
+        "epoch": "7",
+        "version": "2.02.177",
+        "release": "4.el7",
+        "installdate": "1535094124",
         "arch": "x86_64"
       },
       "openssh-clients": {
@@ -3938,11 +4068,25 @@
         "installdate": "1535094081",
         "arch": "x86_64"
       },
+      "findutils": {
+        "epoch": "1",
+        "version": "4.5.11",
+        "release": "5.el7",
+        "installdate": "1535094081",
+        "arch": "x86_64"
+      },
       "libnl3": {
         "epoch": "0",
         "version": "3.2.28",
         "release": "4.el7",
         "installdate": "1535094081",
+        "arch": "x86_64"
+      },
+      "net-tools": {
+        "epoch": "0",
+        "version": "2.0",
+        "release": "0.22.20131004git.el7",
+        "installdate": "1535094130",
         "arch": "x86_64"
       },
       "lua": {
@@ -3959,6 +4103,13 @@
         "installdate": "1535094130",
         "arch": "x86_64"
       },
+      "glib2": {
+        "epoch": "0",
+        "version": "2.54.2",
+        "release": "2.el7",
+        "installdate": "1535094082",
+        "arch": "x86_64"
+      },
       "diffutils": {
         "epoch": "0",
         "version": "3.3",
@@ -3971,6 +4122,13 @@
         "version": "2.9.0",
         "release": "11.el7",
         "installdate": "1535094082",
+        "arch": "x86_64"
+      },
+      "man-db": {
+        "epoch": "0",
+        "version": "2.6.3",
+        "release": "9.el7",
+        "installdate": "1535094130",
         "arch": "x86_64"
       },
       "mpfr": {
@@ -3987,11 +4145,18 @@
         "installdate": "1535094083",
         "arch": "x86_64"
       },
-      "chef": {
+      "sg3_utils": {
         "epoch": "0",
-        "version": "14.10.9",
-        "release": "1.el7",
-        "installdate": "1551806080",
+        "version": "1.37",
+        "release": "12.el7",
+        "installdate": "1535094132",
+        "arch": "x86_64"
+      },
+      "file": {
+        "epoch": "0",
+        "version": "5.11",
+        "release": "33.el7",
+        "installdate": "1535094083",
         "arch": "x86_64"
       },
       "deltarpm": {
@@ -4012,6 +4177,20 @@
         "epoch": "0",
         "version": "2.5.1",
         "release": "3.el7",
+        "installdate": "1535094083",
+        "arch": "noarch"
+      },
+      "xfsprogs": {
+        "epoch": "0",
+        "version": "4.5.0",
+        "release": "15.el7",
+        "installdate": "1535094147",
+        "arch": "x86_64"
+      },
+      "perl-Pod-Escapes": {
+        "epoch": "1",
+        "version": "1.04",
+        "release": "292.el7",
         "installdate": "1535094083",
         "arch": "noarch"
       },
@@ -4050,11 +4229,25 @@
         "installdate": "1535094084",
         "arch": "x86_64"
       },
+      "systemd-libs": {
+        "epoch": "0",
+        "version": "219",
+        "release": "57.el7_5.1",
+        "installdate": "1535094395",
+        "arch": "x86_64"
+      },
       "perl-Time-HiRes": {
         "epoch": "4",
         "version": "1.9725",
         "release": "3.el7",
         "installdate": "1535094084",
+        "arch": "x86_64"
+      },
+      "audit-libs": {
+        "epoch": "0",
+        "version": "2.8.1",
+        "release": "3.el7_5.1",
+        "installdate": "1535094395",
         "arch": "x86_64"
       },
       "perl-Exporter": {
@@ -4064,6 +4257,13 @@
         "installdate": "1535094084",
         "arch": "noarch"
       },
+      "libcom_err": {
+        "epoch": "0",
+        "version": "1.42.9",
+        "release": "12.el7_5",
+        "installdate": "1535094395",
+        "arch": "x86_64"
+      },
       "perl-constant": {
         "epoch": "0",
         "version": "1.27",
@@ -4071,11 +4271,25 @@
         "installdate": "1535094084",
         "arch": "noarch"
       },
+      "libmount": {
+        "epoch": "0",
+        "version": "2.23.2",
+        "release": "52.el7_5.1",
+        "installdate": "1535094395",
+        "arch": "x86_64"
+      },
       "perl-Scalar-List-Utils": {
         "epoch": "0",
         "version": "1.27",
         "release": "248.el7",
         "installdate": "1535094084",
+        "arch": "x86_64"
+      },
+      "util-linux": {
+        "epoch": "0",
+        "version": "2.23.2",
+        "release": "52.el7_5.1",
+        "installdate": "1535094397",
         "arch": "x86_64"
       },
       "perl-Carp": {
@@ -4085,11 +4299,25 @@
         "installdate": "1535094084",
         "arch": "noarch"
       },
+      "initscripts": {
+        "epoch": "0",
+        "version": "9.49.41",
+        "release": "1.el7_5.1",
+        "installdate": "1535094398",
+        "arch": "x86_64"
+      },
       "perl-File-Path": {
         "epoch": "0",
         "version": "2.09",
         "release": "2.el7",
         "installdate": "1535094084",
+        "arch": "noarch"
+      },
+      "selinux-policy": {
+        "epoch": "0",
+        "version": "3.13.1",
+        "release": "192.el7_5.6",
+        "installdate": "1535094398",
         "arch": "noarch"
       },
       "perl-Pod-Simple": {
@@ -4098,6 +4326,27 @@
         "release": "4.el7",
         "installdate": "1535094084",
         "arch": "noarch"
+      },
+      "python": {
+        "epoch": "0",
+        "version": "2.7.5",
+        "release": "69.el7_5",
+        "installdate": "1535094406",
+        "arch": "x86_64"
+      },
+      "python-perf": {
+        "epoch": "0",
+        "version": "3.10.0",
+        "release": "862.11.6.el7",
+        "installdate": "1535094406",
+        "arch": "x86_64"
+      },
+      "e2fsprogs-libs": {
+        "epoch": "0",
+        "version": "1.42.9",
+        "release": "12.el7_5",
+        "installdate": "1535094406",
+        "arch": "x86_64"
       },
       "libmnl": {
         "epoch": "0",
@@ -4120,11 +4369,39 @@
         "installdate": "1535094087",
         "arch": "x86_64"
       },
+      "nss": {
+        "epoch": "0",
+        "version": "3.36.0",
+        "release": "5.el7_5",
+        "installdate": "1535094407",
+        "arch": "x86_64"
+      },
       "libpwquality": {
         "epoch": "0",
         "version": "1.2.3",
         "release": "5.el7",
         "installdate": "1535094088",
+        "arch": "x86_64"
+      },
+      "NetworkManager-libnm": {
+        "epoch": "1",
+        "version": "1.10.2",
+        "release": "16.el7_5",
+        "installdate": "1535094407",
+        "arch": "x86_64"
+      },
+      "libcroco": {
+        "epoch": "0",
+        "version": "0.6.11",
+        "release": "1.el7",
+        "installdate": "1535094088",
+        "arch": "x86_64"
+      },
+      "nss-tools": {
+        "epoch": "0",
+        "version": "3.36.0",
+        "release": "5.el7_5",
+        "installdate": "1535094407",
         "arch": "x86_64"
       },
       "libassuan": {
@@ -4155,6 +4432,13 @@
         "installdate": "1535094088",
         "arch": "x86_64"
       },
+      "dracut": {
+        "epoch": "0",
+        "version": "033",
+        "release": "535.el7_5.1",
+        "installdate": "1535094409",
+        "arch": "x86_64"
+      },
       "libunistring": {
         "epoch": "0",
         "version": "0.9.3",
@@ -4162,10 +4446,24 @@
         "installdate": "1535094089",
         "arch": "x86_64"
       },
+      "libbasicobjects": {
+        "epoch": "0",
+        "version": "0.1.1",
+        "release": "29.el7",
+        "installdate": "1535094089",
+        "arch": "x86_64"
+      },
       "slang": {
         "epoch": "0",
         "version": "2.2.4",
         "release": "11.el7",
+        "installdate": "1535094090",
+        "arch": "x86_64"
+      },
+      "ethtool": {
+        "epoch": "2",
+        "version": "4.8",
+        "release": "7.el7",
         "installdate": "1535094090",
         "arch": "x86_64"
       },
@@ -4187,6 +4485,13 @@
         "epoch": "0",
         "version": "3.13",
         "release": "3.el7",
+        "installdate": "1535094090",
+        "arch": "x86_64"
+      },
+      "libcollection": {
+        "epoch": "0",
+        "version": "0.7.0",
+        "release": "29.el7",
         "installdate": "1535094090",
         "arch": "x86_64"
       },
@@ -4218,6 +4523,13 @@
         "installdate": "1535094091",
         "arch": "x86_64"
       },
+      "libteam": {
+        "epoch": "0",
+        "version": "1.27",
+        "release": "4.el7",
+        "installdate": "1535094091",
+        "arch": "x86_64"
+      },
       "python-slip": {
         "epoch": "0",
         "version": "0.4.0",
@@ -4232,11 +4544,25 @@
         "installdate": "1535094657",
         "arch": "noarch"
       },
+      "ipset": {
+        "epoch": "0",
+        "version": "6.29",
+        "release": "1.el7",
+        "installdate": "1535094092",
+        "arch": "x86_64"
+      },
+      "yum-utils": {
+        "epoch": "0",
+        "version": "1.1.31",
+        "release": "46.el7_5",
+        "installdate": "1535094657",
+        "arch": "noarch"
+      },
       "glibc": {
         "epoch": "0",
         "version": "2.17",
         "release": "260.el7_6.3",
-        "installdate": "1551805715",
+        "installdate": "1551825345",
         "arch": "x86_64"
       },
       "python-configobj": {
@@ -4250,14 +4576,14 @@
         "epoch": "0",
         "version": "4.8.5",
         "release": "36.el7",
-        "installdate": "1551805721",
+        "installdate": "1551825351",
         "arch": "x86_64"
       },
       "perl-libs": {
         "epoch": "4",
         "version": "5.16.3",
         "release": "294.el7_6",
-        "installdate": "1551805722",
+        "installdate": "1551825351",
         "arch": "x86_64"
       },
       "python-iniparse": {
@@ -4271,7 +4597,7 @@
         "epoch": "0",
         "version": "2.27",
         "release": "34.base.el7",
-        "installdate": "1551805725",
+        "installdate": "1551825354",
         "arch": "x86_64"
       },
       "python-schedutils": {
@@ -4285,7 +4611,7 @@
         "epoch": "0",
         "version": "2.17",
         "release": "260.el7_6.3",
-        "installdate": "1551805727",
+        "installdate": "1551825357",
         "arch": "x86_64"
       },
       "less": {
@@ -4299,7 +4625,7 @@
         "epoch": "0",
         "version": "4.8.5",
         "release": "36.el7",
-        "installdate": "1551805729",
+        "installdate": "1551825359",
         "arch": "x86_64"
       },
       "python-gobject-base": {
@@ -4309,11 +4635,11 @@
         "installdate": "1535094092",
         "arch": "x86_64"
       },
-      "gdisk": {
+      "nss-pem": {
         "epoch": "0",
-        "version": "0.8.10",
-        "release": "2.el7",
-        "installdate": "1551805795",
+        "version": "1.0.3",
+        "release": "5.el7",
+        "installdate": "1551825424",
         "arch": "x86_64"
       },
       "tcp_wrappers": {
@@ -4323,11 +4649,11 @@
         "installdate": "1535094092",
         "arch": "x86_64"
       },
-      "zlib": {
+      "curl": {
         "epoch": "0",
-        "version": "1.2.7",
-        "release": "18.el7",
-        "installdate": "1551805814",
+        "version": "7.29.0",
+        "release": "51.el7",
+        "installdate": "1551825424",
         "arch": "x86_64"
       },
       "libdb-utils": {
@@ -4337,18 +4663,11 @@
         "installdate": "1535094092",
         "arch": "x86_64"
       },
-      "libuuid": {
+      "kmod-libs": {
         "epoch": "0",
-        "version": "2.23.2",
-        "release": "59.el7",
-        "installdate": "1551805814",
-        "arch": "x86_64"
-      },
-      "nss-util": {
-        "epoch": "0",
-        "version": "3.36.0",
-        "release": "1.1.el7_6",
-        "installdate": "1551805814",
+        "version": "20",
+        "release": "21.el7",
+        "installdate": "1535094093",
         "arch": "x86_64"
       },
       "centos-logos": {
@@ -4358,13 +4677,6 @@
         "installdate": "1535094099",
         "arch": "noarch"
       },
-      "libselinux": {
-        "epoch": "0",
-        "version": "2.5",
-        "release": "14.1.el7",
-        "installdate": "1551805814",
-        "arch": "x86_64"
-      },
       "fipscheck-lib": {
         "epoch": "0",
         "version": "1.4.1",
@@ -4372,32 +4684,18 @@
         "installdate": "1535094099",
         "arch": "x86_64"
       },
-      "krb5-libs": {
+      "libssh2": {
         "epoch": "0",
-        "version": "1.15.1",
-        "release": "37.el7_6",
-        "installdate": "1551805815",
+        "version": "1.4.3",
+        "release": "10.el7_2.1",
+        "installdate": "1535094099",
         "arch": "x86_64"
       },
-      "libblkid": {
+      "rpm": {
         "epoch": "0",
-        "version": "2.23.2",
-        "release": "59.el7",
-        "installdate": "1551805816",
-        "arch": "x86_64"
-      },
-      "centos-release": {
-        "epoch": "0",
-        "version": "7",
-        "release": "6.1810.2.el7.centos",
-        "installdate": "1551805816",
-        "arch": "x86_64"
-      },
-      "libmount": {
-        "epoch": "0",
-        "version": "2.23.2",
-        "release": "59.el7",
-        "installdate": "1551805816",
+        "version": "4.11.3",
+        "release": "32.el7",
+        "installdate": "1535094100",
         "arch": "x86_64"
       },
       "libuser": {
@@ -4407,13 +4705,6 @@
         "installdate": "1535094100",
         "arch": "x86_64"
       },
-      "python-libs": {
-        "epoch": "0",
-        "version": "2.7.5",
-        "release": "76.el7",
-        "installdate": "1551805818",
-        "arch": "x86_64"
-      },
       "python-pycurl": {
         "epoch": "0",
         "version": "7.19.0",
@@ -4421,32 +4712,18 @@
         "installdate": "1535094100",
         "arch": "x86_64"
       },
-      "libsemanage": {
+      "tar": {
+        "epoch": "2",
+        "version": "1.26",
+        "release": "34.el7",
+        "installdate": "1535094100",
+        "arch": "x86_64"
+      },
+      "libselinux-utils": {
         "epoch": "0",
         "version": "2.5",
-        "release": "14.el7",
-        "installdate": "1551805818",
-        "arch": "x86_64"
-      },
-      "file-libs": {
-        "epoch": "0",
-        "version": "5.11",
-        "release": "35.el7",
-        "installdate": "1551805819",
-        "arch": "x86_64"
-      },
-      "setup": {
-        "epoch": "0",
-        "version": "2.8.71",
-        "release": "10.el7",
-        "installdate": "1551805819",
-        "arch": "noarch"
-      },
-      "libtirpc": {
-        "epoch": "0",
-        "version": "0.2.4",
-        "release": "0.15.el7",
-        "installdate": "1551805819",
+        "release": "12.el7",
+        "installdate": "1535094101",
         "arch": "x86_64"
       },
       "pinentry": {
@@ -4456,13 +4733,6 @@
         "installdate": "1535094101",
         "arch": "x86_64"
       },
-      "ethtool": {
-        "epoch": "2",
-        "version": "4.8",
-        "release": "9.el7",
-        "installdate": "1551805819",
-        "arch": "x86_64"
-      },
       "mozjs17": {
         "epoch": "0",
         "version": "17.0.0",
@@ -4470,32 +4740,18 @@
         "installdate": "1535094101",
         "arch": "x86_64"
       },
-      "checkpolicy": {
+      "sg3_utils-libs": {
         "epoch": "0",
-        "version": "2.5",
-        "release": "8.el7",
-        "installdate": "1551805819",
+        "version": "1.37",
+        "release": "12.el7",
+        "installdate": "1535094101",
         "arch": "x86_64"
       },
-      "libstdc++": {
+      "libini_config": {
         "epoch": "0",
-        "version": "4.8.5",
-        "release": "36.el7",
-        "installdate": "1551805820",
-        "arch": "x86_64"
-      },
-      "libsemanage-python": {
-        "epoch": "0",
-        "version": "2.5",
-        "release": "14.el7",
-        "installdate": "1551805820",
-        "arch": "x86_64"
-      },
-      "libselinux-python": {
-        "epoch": "0",
-        "version": "2.5",
-        "release": "14.1.el7",
-        "installdate": "1551805820",
+        "version": "1.3.1",
+        "release": "29.el7",
+        "installdate": "1535094101",
         "arch": "x86_64"
       },
       "pth": {
@@ -4505,18 +4761,11 @@
         "installdate": "1535094101",
         "arch": "x86_64"
       },
-      "python-urlgrabber": {
+      "rpm-build-libs": {
         "epoch": "0",
-        "version": "3.10",
-        "release": "9.el7",
-        "installdate": "1551805820",
-        "arch": "noarch"
-      },
-      "python-perf": {
-        "epoch": "0",
-        "version": "3.10.0",
-        "release": "957.5.1.el7",
-        "installdate": "1551805820",
+        "version": "4.11.3",
+        "release": "32.el7",
+        "installdate": "1535094102",
         "arch": "x86_64"
       },
       "gpgme": {
@@ -4526,20 +4775,6 @@
         "installdate": "1535094102",
         "arch": "x86_64"
       },
-      "grubby": {
-        "epoch": "0",
-        "version": "8.28",
-        "release": "25.el7",
-        "installdate": "1551805821",
-        "arch": "x86_64"
-      },
-      "logrotate": {
-        "epoch": "0",
-        "version": "3.8.6",
-        "release": "17.el7",
-        "installdate": "1551805821",
-        "arch": "x86_64"
-      },
       "libseccomp": {
         "epoch": "0",
         "version": "2.3.1",
@@ -4547,32 +4782,11 @@
         "installdate": "1535094102",
         "arch": "x86_64"
       },
-      "nss": {
-        "epoch": "0",
-        "version": "3.36.0",
-        "release": "7.1.el7_6",
-        "installdate": "1551805821",
-        "arch": "x86_64"
-      },
-      "nss-tools": {
-        "epoch": "0",
-        "version": "3.36.0",
-        "release": "7.1.el7_6",
-        "installdate": "1551805822",
-        "arch": "x86_64"
-      },
-      "curl": {
-        "epoch": "0",
-        "version": "7.29.0",
-        "release": "51.el7",
-        "installdate": "1551805822",
-        "arch": "x86_64"
-      },
-      "rpm": {
-        "epoch": "0",
-        "version": "4.11.3",
-        "release": "35.el7",
-        "installdate": "1551805822",
+      "dmidecode": {
+        "epoch": "1",
+        "version": "3.0",
+        "release": "5.el7",
+        "installdate": "1535094103",
         "arch": "x86_64"
       },
       "libaio": {
@@ -4582,13 +4796,6 @@
         "installdate": "1535094103",
         "arch": "x86_64"
       },
-      "rpm-build-libs": {
-        "epoch": "0",
-        "version": "4.11.3",
-        "release": "35.el7",
-        "installdate": "1551805822",
-        "arch": "x86_64"
-      },
       "numactl-libs": {
         "epoch": "0",
         "version": "2.0.9",
@@ -4596,12 +4803,19 @@
         "installdate": "1535094103",
         "arch": "x86_64"
       },
-      "yum-plugin-fastestmirror": {
+      "libfastjson": {
         "epoch": "0",
-        "version": "1.1.31",
-        "release": "50.el7",
-        "installdate": "1551805822",
-        "arch": "noarch"
+        "version": "0.99.4",
+        "release": "2.el7",
+        "installdate": "1535094103",
+        "arch": "x86_64"
+      },
+      "libsemanage": {
+        "epoch": "0",
+        "version": "2.5",
+        "release": "11.el7",
+        "installdate": "1535094103",
+        "arch": "x86_64"
       },
       "libutempter": {
         "epoch": "0",
@@ -4617,277 +4831,60 @@
         "installdate": "1535094103",
         "arch": "x86_64"
       },
-      "procps-ng": {
-        "epoch": "0",
-        "version": "3.3.10",
-        "release": "23.el7",
-        "installdate": "1551805835",
-        "arch": "x86_64"
-      },
-      "device-mapper": {
+      "device-mapper-libs": {
         "epoch": "7",
-        "version": "1.02.149",
-        "release": "10.el7_6.3",
-        "installdate": "1551805835",
-        "arch": "x86_64"
-      },
-      "kmod": {
-        "epoch": "0",
-        "version": "20",
-        "release": "23.el7",
-        "installdate": "1551805836",
-        "arch": "x86_64"
-      },
-      "cryptsetup-libs": {
-        "epoch": "0",
-        "version": "2.0.3",
-        "release": "3.el7",
-        "installdate": "1551805836",
-        "arch": "x86_64"
-      },
-      "systemd-libs": {
-        "epoch": "0",
-        "version": "219",
-        "release": "62.el7_6.5",
-        "installdate": "1551805836",
-        "arch": "x86_64"
-      },
-      "systemd": {
-        "epoch": "0",
-        "version": "219",
-        "release": "62.el7_6.5",
-        "installdate": "1551805837",
-        "arch": "x86_64"
-      },
-      "elfutils-default-yama-scope": {
-        "epoch": "0",
-        "version": "0.172",
-        "release": "2.el7",
-        "installdate": "1551805838",
-        "arch": "noarch"
-      },
-      "device-mapper-event-libs": {
-        "epoch": "7",
-        "version": "1.02.149",
-        "release": "10.el7_6.3",
-        "installdate": "1551805838",
-        "arch": "x86_64"
-      },
-      "policycoreutils": {
-        "epoch": "0",
-        "version": "2.5",
-        "release": "29.el7_6.1",
-        "installdate": "1551805839",
-        "arch": "x86_64"
-      },
-      "grub2-tools": {
-        "epoch": "1",
-        "version": "2.02",
-        "release": "0.76.el7.centos.1",
-        "installdate": "1551805848",
-        "arch": "x86_64"
-      },
-      "initscripts": {
-        "epoch": "0",
-        "version": "9.49.46",
-        "release": "1.el7",
-        "installdate": "1551805848",
-        "arch": "x86_64"
-      },
-      "grub2-tools-extra": {
-        "epoch": "1",
-        "version": "2.02",
-        "release": "0.76.el7.centos.1",
-        "installdate": "1551805849",
-        "arch": "x86_64"
-      },
-      "device-mapper-event": {
-        "epoch": "7",
-        "version": "1.02.149",
-        "release": "10.el7_6.3",
-        "installdate": "1551805849",
-        "arch": "x86_64"
-      },
-      "wpa_supplicant": {
-        "epoch": "1",
-        "version": "2.6",
-        "release": "12.el7",
-        "installdate": "1551805849",
-        "arch": "x86_64"
-      },
-      "rpcbind": {
-        "epoch": "0",
-        "version": "0.2.0",
-        "release": "47.el7",
-        "installdate": "1551805850",
-        "arch": "x86_64"
-      },
-      "cronie": {
-        "epoch": "0",
-        "version": "1.4.11",
-        "release": "20.el7_6",
-        "installdate": "1551805850",
-        "arch": "x86_64"
-      },
-      "policycoreutils-python": {
-        "epoch": "0",
-        "version": "2.5",
-        "release": "29.el7_6.1",
-        "installdate": "1551805850",
-        "arch": "x86_64"
-      },
-      "selinux-policy-devel": {
-        "epoch": "0",
-        "version": "3.13.1",
-        "release": "229.el7_6.9",
-        "installdate": "1551805852",
-        "arch": "noarch"
-      },
-      "teamd": {
-        "epoch": "0",
-        "version": "1.27",
-        "release": "5.el7",
-        "installdate": "1551805872",
-        "arch": "x86_64"
-      },
-      "kernel-tools-libs": {
-        "epoch": "0",
-        "version": "3.10.0",
-        "release": "957.5.1.el7",
-        "installdate": "1551805872",
-        "arch": "x86_64"
-      },
-      "kexec-tools": {
-        "epoch": "0",
-        "version": "2.0.15",
-        "release": "21.el7",
-        "installdate": "1551805873",
-        "arch": "x86_64"
-      },
-      "nfs-utils": {
-        "epoch": "1",
-        "version": "1.3.0",
-        "release": "0.61.el7",
-        "installdate": "1551805873",
-        "arch": "x86_64"
-      },
-      "lvm2": {
-        "epoch": "7",
-        "version": "2.02.180",
-        "release": "10.el7_6.3",
-        "installdate": "1551805874",
-        "arch": "x86_64"
-      },
-      "kbd": {
-        "epoch": "0",
-        "version": "1.15.5",
-        "release": "15.el7",
-        "installdate": "1551805874",
-        "arch": "x86_64"
-      },
-      "tuned": {
-        "epoch": "0",
-        "version": "2.10.0",
-        "release": "6.el7",
-        "installdate": "1551805879",
-        "arch": "noarch"
-      },
-      "postfix": {
-        "epoch": "2",
-        "version": "2.10.1",
-        "release": "7.el7",
-        "installdate": "1551805893",
-        "arch": "x86_64"
-      },
-      "firewalld": {
-        "epoch": "0",
-        "version": "0.5.3",
-        "release": "5.el7",
-        "installdate": "1551805894",
-        "arch": "noarch"
-      },
-      "hwdata": {
-        "epoch": "0",
-        "version": "0.252",
-        "release": "9.1.el7",
-        "installdate": "1551805894",
-        "arch": "x86_64"
-      },
-      "net-tools": {
-        "epoch": "0",
-        "version": "2.0",
-        "release": "0.24.20131004git.el7",
-        "installdate": "1551805898",
-        "arch": "x86_64"
-      },
-      "qemu-guest-agent": {
-        "epoch": "10",
-        "version": "2.12.0",
-        "release": "2.el7",
-        "installdate": "1551805898",
-        "arch": "x86_64"
-      },
-      "bind-libs-lite": {
-        "epoch": "32",
-        "version": "9.9.4",
-        "release": "73.el7_6",
-        "installdate": "1551805899",
-        "arch": "x86_64"
-      },
-      "e2fsprogs": {
-        "epoch": "0",
-        "version": "1.42.9",
-        "release": "13.el7",
-        "installdate": "1551805899",
-        "arch": "x86_64"
-      },
-      "yum-utils": {
-        "epoch": "0",
-        "version": "1.1.31",
-        "release": "50.el7",
-        "installdate": "1551805899",
-        "arch": "noarch"
-      },
-      "libcroco": {
-        "epoch": "0",
-        "version": "0.6.12",
+        "version": "1.02.146",
         "release": "4.el7",
-        "installdate": "1551805899",
+        "installdate": "1535094104",
         "arch": "x86_64"
       },
-      "openssl": {
+      "elfutils-libs": {
+        "epoch": "0",
+        "version": "0.170",
+        "release": "4.el7",
+        "installdate": "1535094104",
+        "arch": "x86_64"
+      },
+      "dbus-libs": {
         "epoch": "1",
-        "version": "1.0.2k",
-        "release": "16.el7",
-        "installdate": "1551805900",
+        "version": "1.10.24",
+        "release": "7.el7",
+        "installdate": "1535094104",
         "arch": "x86_64"
       },
-      "man-db": {
+      "dbus": {
+        "epoch": "1",
+        "version": "1.10.24",
+        "release": "7.el7",
+        "installdate": "1535094106",
+        "arch": "x86_64"
+      },
+      "polkit": {
         "epoch": "0",
-        "version": "2.6.3",
-        "release": "11.el7",
-        "installdate": "1551805900",
+        "version": "0.112",
+        "release": "14.el7",
+        "installdate": "1535094106",
         "arch": "x86_64"
-      },
-      "perl-macros": {
-        "epoch": "4",
-        "version": "5.16.3",
-        "release": "294.el7_6",
-        "installdate": "1551805900",
-        "arch": "x86_64"
-      },
-      "tzdata": {
-        "epoch": "0",
-        "version": "2018i",
-        "release": "1.el7",
-        "installdate": "1551805901",
-        "arch": "noarch"
       },
       "kernel": {
         "epoch": "0",
         "version": "3.10.0",
-        "release": "957.5.1.el7",
-        "installdate": "1551805878",
+        "release": "862.11.6.el7",
+        "installdate": "1535094418",
+        "arch": "x86_64"
+      },
+      "kernel-tools": {
+        "epoch": "0",
+        "version": "3.10.0",
+        "release": "862.11.6.el7",
+        "installdate": "1535094420",
+        "arch": "x86_64"
+      },
+      "dracut-network": {
+        "epoch": "0",
+        "version": "033",
+        "release": "535.el7_5.1",
+        "installdate": "1535094420",
         "arch": "x86_64"
       },
       "gnupg2": {
@@ -4897,6 +4894,34 @@
         "installdate": "1535094421",
         "arch": "x86_64"
       },
+      "NetworkManager-team": {
+        "epoch": "1",
+        "version": "1.10.2",
+        "release": "16.el7_5",
+        "installdate": "1535094421",
+        "arch": "x86_64"
+      },
+      "e2fsprogs": {
+        "epoch": "0",
+        "version": "1.42.9",
+        "release": "12.el7_5",
+        "installdate": "1535094421",
+        "arch": "x86_64"
+      },
+      "audit-libs-python": {
+        "epoch": "0",
+        "version": "2.8.1",
+        "release": "3.el7_5.1",
+        "installdate": "1535094421",
+        "arch": "x86_64"
+      },
+      "selinux-policy-devel": {
+        "epoch": "0",
+        "version": "3.13.1",
+        "release": "192.el7_5.6",
+        "installdate": "1535094432",
+        "arch": "noarch"
+      },
       "mariadb-libs": {
         "epoch": "1",
         "version": "5.5.60",
@@ -4904,96 +4929,19 @@
         "installdate": "1535094443",
         "arch": "x86_64"
       },
-      "libselinux-utils": {
-        "epoch": "0",
-        "version": "2.5",
-        "release": "14.1.el7",
-        "installdate": "1551805823",
-        "arch": "x86_64"
-      },
-      "vim-minimal": {
+      "microcode_ctl": {
         "epoch": "2",
-        "version": "7.4.160",
-        "release": "5.el7",
-        "installdate": "1551805823",
+        "version": "2.1",
+        "release": "29.10.el7_5",
+        "installdate": "1535094444",
         "arch": "x86_64"
       },
-      "e2fsprogs-libs": {
+      "yum-plugin-fastestmirror": {
         "epoch": "0",
-        "version": "1.42.9",
-        "release": "13.el7",
-        "installdate": "1551805823",
-        "arch": "x86_64"
-      },
-      "libpng": {
-        "epoch": "2",
-        "version": "1.5.13",
-        "release": "7.el7_2",
-        "installdate": "1551805823",
-        "arch": "x86_64"
-      },
-      "kmod-libs": {
-        "epoch": "0",
-        "version": "20",
-        "release": "23.el7",
-        "installdate": "1551805823",
-        "arch": "x86_64"
-      },
-      "linux-firmware": {
-        "epoch": "0",
-        "version": "20180911",
-        "release": "69.git85c5d90.el7",
-        "installdate": "1551805833",
+        "version": "1.1.31",
+        "release": "46.el7_5",
+        "installdate": "1535094460",
         "arch": "noarch"
-      },
-      "ipset-libs": {
-        "epoch": "0",
-        "version": "6.38",
-        "release": "3.el7_6",
-        "installdate": "1551805833",
-        "arch": "x86_64"
-      },
-      "libteam": {
-        "epoch": "0",
-        "version": "1.27",
-        "release": "5.el7",
-        "installdate": "1551805833",
-        "arch": "x86_64"
-      },
-      "bind-license": {
-        "epoch": "32",
-        "version": "9.9.4",
-        "release": "73.el7_6",
-        "installdate": "1551805833",
-        "arch": "noarch"
-      },
-      "kbd-legacy": {
-        "epoch": "0",
-        "version": "1.15.5",
-        "release": "15.el7",
-        "installdate": "1551805834",
-        "arch": "noarch"
-      },
-      "kbd-misc": {
-        "epoch": "0",
-        "version": "1.15.5",
-        "release": "15.el7",
-        "installdate": "1551805834",
-        "arch": "noarch"
-      },
-      "libini_config": {
-        "epoch": "0",
-        "version": "1.3.1",
-        "release": "32.el7",
-        "installdate": "1551805834",
-        "arch": "x86_64"
-      },
-      "util-linux": {
-        "epoch": "0",
-        "version": "2.23.2",
-        "release": "59.el7",
-        "installdate": "1551805835",
-        "arch": "x86_64"
       },
       "iputils": {
         "epoch": "0",
@@ -5002,12 +4950,12 @@
         "installdate": "1535094106",
         "arch": "x86_64"
       },
-      "dracut": {
-        "epoch": "0",
-        "version": "033",
-        "release": "554.el7",
-        "installdate": "1551805835",
-        "arch": "x86_64"
+      "grub2-common": {
+        "epoch": "1",
+        "version": "2.02",
+        "release": "0.65.el7.centos.2",
+        "installdate": "1535094070",
+        "arch": "noarch"
       },
       "ncurses-base": {
         "epoch": "0",
@@ -5016,11 +4964,11 @@
         "installdate": "1535094071",
         "arch": "noarch"
       },
-      "elfutils-libs": {
+      "hwdata": {
         "epoch": "0",
-        "version": "0.172",
-        "release": "2.el7",
-        "installdate": "1551805836",
+        "version": "0.252",
+        "release": "8.8.el7",
+        "installdate": "1535094107",
         "arch": "x86_64"
       },
       "ncurses": {
@@ -5030,32 +4978,11 @@
         "installdate": "1535094072",
         "arch": "x86_64"
       },
-      "dbus": {
-        "epoch": "1",
-        "version": "1.10.24",
-        "release": "12.el7",
-        "installdate": "1551805838",
-        "arch": "x86_64"
-      },
-      "grub2-tools-minimal": {
-        "epoch": "1",
-        "version": "2.02",
-        "release": "0.76.el7.centos.1",
-        "installdate": "1551805838",
-        "arch": "x86_64"
-      },
       "libpciaccess": {
         "epoch": "0",
         "version": "0.14",
         "release": "1.el7",
         "installdate": "1535094108",
-        "arch": "x86_64"
-      },
-      "polkit": {
-        "epoch": "0",
-        "version": "0.112",
-        "release": "18.el7",
-        "installdate": "1551805848",
         "arch": "x86_64"
       },
       "quota": {
@@ -5065,13 +4992,6 @@
         "installdate": "1535094109",
         "arch": "x86_64"
       },
-      "grub2-pc": {
-        "epoch": "1",
-        "version": "2.02",
-        "release": "0.76.el7.centos.1",
-        "installdate": "1551805849",
-        "arch": "x86_64"
-      },
       "info": {
         "epoch": "0",
         "version": "5.1",
@@ -5079,11 +4999,11 @@
         "installdate": "1535094078",
         "arch": "x86_64"
       },
-      "NetworkManager": {
-        "epoch": "1",
-        "version": "1.12.0",
-        "release": "8.el7_6",
-        "installdate": "1551805849",
+      "policycoreutils-python": {
+        "epoch": "0",
+        "version": "2.5",
+        "release": "22.el7",
+        "installdate": "1535094110",
         "arch": "x86_64"
       },
       "libattr": {
@@ -5091,13 +5011,6 @@
         "version": "2.4.46",
         "release": "13.el7",
         "installdate": "1535094078",
-        "arch": "x86_64"
-      },
-      "libcgroup": {
-        "epoch": "0",
-        "version": "0.41",
-        "release": "20.el7",
-        "installdate": "1551805850",
         "arch": "x86_64"
       },
       "dbus-glib": {
@@ -5114,13 +5027,6 @@
         "installdate": "1535094079",
         "arch": "x86_64"
       },
-      "gssproxy": {
-        "epoch": "0",
-        "version": "0.7.0",
-        "release": "21.el7",
-        "installdate": "1551805872",
-        "arch": "x86_64"
-      },
       "python-pyudev": {
         "epoch": "0",
         "version": "0.15",
@@ -5133,13 +5039,6 @@
         "version": "1.5.8",
         "release": "3.el7",
         "installdate": "1535094079",
-        "arch": "x86_64"
-      },
-      "kernel-tools": {
-        "epoch": "0",
-        "version": "3.10.0",
-        "release": "957.5.1.el7",
-        "installdate": "1551805873",
         "arch": "x86_64"
       },
       "virt-what": {
@@ -5156,18 +5055,18 @@
         "installdate": "1535094079",
         "arch": "x86_64"
       },
-      "NetworkManager-tui": {
-        "epoch": "1",
-        "version": "1.12.0",
-        "release": "8.el7_6",
-        "installdate": "1551805873",
+      "coreutils": {
+        "epoch": "0",
+        "version": "8.22",
+        "release": "21.el7",
+        "installdate": "1535094080",
         "arch": "x86_64"
       },
-      "audit": {
+      "kexec-tools": {
         "epoch": "0",
-        "version": "2.8.4",
-        "release": "4.el7",
-        "installdate": "1551805893",
+        "version": "2.0.15",
+        "release": "13.el7",
+        "installdate": "1535094123",
         "arch": "x86_64"
       },
       "libxml2": {
@@ -5177,11 +5076,11 @@
         "installdate": "1535094081",
         "arch": "x86_64"
       },
-      "microcode_ctl": {
-        "epoch": "2",
-        "version": "2.1",
-        "release": "47.el7",
-        "installdate": "1551805895",
+      "grub2": {
+        "epoch": "1",
+        "version": "2.02",
+        "release": "0.65.el7.centos.2",
+        "installdate": "1535094124",
         "arch": "x86_64"
       },
       "sqlite": {
@@ -5191,13 +5090,6 @@
         "installdate": "1535094081",
         "arch": "x86_64"
       },
-      "dracut-config-rescue": {
-        "epoch": "0",
-        "version": "033",
-        "release": "554.el7",
-        "installdate": "1551805898",
-        "arch": "x86_64"
-      },
       "gzip": {
         "epoch": "0",
         "version": "1.5",
@@ -5205,11 +5097,11 @@
         "installdate": "1535094081",
         "arch": "x86_64"
       },
-      "sudo": {
-        "epoch": "0",
-        "version": "1.8.23",
-        "release": "3.el7",
-        "installdate": "1551805899",
+      "postfix": {
+        "epoch": "2",
+        "version": "2.10.1",
+        "release": "6.el7",
+        "installdate": "1535094129",
         "arch": "x86_64"
       },
       "expat": {
@@ -5217,13 +5109,6 @@
         "version": "2.1.0",
         "release": "10.el7_3",
         "installdate": "1535094081",
-        "arch": "x86_64"
-      },
-      "xfsprogs": {
-        "epoch": "0",
-        "version": "4.5.0",
-        "release": "18.el7",
-        "installdate": "1551805899",
         "arch": "x86_64"
       },
       "irqbalance": {
@@ -5240,13 +5125,6 @@
         "installdate": "1535094082",
         "arch": "x86_64"
       },
-      "iprutils": {
-        "epoch": "0",
-        "version": "2.4.16.1",
-        "release": "1.el7",
-        "installdate": "1551805900",
-        "arch": "x86_64"
-      },
       "parted": {
         "epoch": "0",
         "version": "3.1",
@@ -5261,13 +5139,6 @@
         "installdate": "1535094082",
         "arch": "x86_64"
       },
-      "perl-Pod-Escapes": {
-        "epoch": "1",
-        "version": "1.04",
-        "release": "294.el7_6",
-        "installdate": "1551805901",
-        "arch": "noarch"
-      },
       "passwd": {
         "epoch": "0",
         "version": "0.79",
@@ -5280,6 +5151,13 @@
         "version": "1.10",
         "release": "8.el7",
         "installdate": "1535094083",
+        "arch": "x86_64"
+      },
+      "wget": {
+        "epoch": "0",
+        "version": "1.14",
+        "release": "15.el7_4.1",
+        "installdate": "1535094146",
         "arch": "x86_64"
       },
       "perl-Pod-Perldoc": {
@@ -5303,11 +5181,25 @@
         "installdate": "1535094083",
         "arch": "noarch"
       },
+      "nss-util": {
+        "epoch": "0",
+        "version": "3.36.0",
+        "release": "1.el7_5",
+        "installdate": "1535094395",
+        "arch": "x86_64"
+      },
       "perl-Storable": {
         "epoch": "0",
         "version": "2.45",
         "release": "3.el7",
         "installdate": "1535094084",
+        "arch": "x86_64"
+      },
+      "libblkid": {
+        "epoch": "0",
+        "version": "2.23.2",
+        "release": "52.el7_5.1",
+        "installdate": "1535094395",
         "arch": "x86_64"
       },
       "perl-Time-Local": {
@@ -5317,11 +5209,25 @@
         "installdate": "1535094084",
         "arch": "noarch"
       },
+      "systemd": {
+        "epoch": "0",
+        "version": "219",
+        "release": "57.el7_5.1",
+        "installdate": "1535094396",
+        "arch": "x86_64"
+      },
       "perl-Socket": {
         "epoch": "0",
         "version": "2.010",
         "release": "4.el7",
         "installdate": "1535094084",
+        "arch": "x86_64"
+      },
+      "libstdc++": {
+        "epoch": "0",
+        "version": "4.8.5",
+        "release": "28.el7_5.1",
+        "installdate": "1535094398",
         "arch": "x86_64"
       },
       "perl-PathTools": {
@@ -5331,11 +5237,46 @@
         "installdate": "1535094084",
         "arch": "x86_64"
       },
+      "systemd-sysv": {
+        "epoch": "0",
+        "version": "219",
+        "release": "57.el7_5.1",
+        "installdate": "1535094406",
+        "arch": "x86_64"
+      },
+      "krb5-libs": {
+        "epoch": "0",
+        "version": "1.15.1",
+        "release": "19.el7",
+        "installdate": "1535094406",
+        "arch": "x86_64"
+      },
+      "libselinux-python": {
+        "epoch": "0",
+        "version": "2.5",
+        "release": "12.el7",
+        "installdate": "1535094087",
+        "arch": "x86_64"
+      },
+      "nss-sysinit": {
+        "epoch": "0",
+        "version": "3.36.0",
+        "release": "5.el7_5",
+        "installdate": "1535094407",
+        "arch": "x86_64"
+      },
       "pam": {
         "epoch": "0",
         "version": "1.1.8",
         "release": "22.el7",
         "installdate": "1535094088",
+        "arch": "x86_64"
+      },
+      "openldap": {
+        "epoch": "0",
+        "version": "2.4.44",
+        "release": "15.el7_5",
+        "installdate": "1535094408",
         "arch": "x86_64"
       },
       "cyrus-sasl-lib": {
@@ -5345,11 +5286,32 @@
         "installdate": "1535094088",
         "arch": "x86_64"
       },
+      "kernel-tools-libs": {
+        "epoch": "0",
+        "version": "3.10.0",
+        "release": "862.11.6.el7",
+        "installdate": "1535094409",
+        "arch": "x86_64"
+      },
       "libevent": {
         "epoch": "0",
         "version": "2.0.21",
         "release": "4.el7",
         "installdate": "1535094089",
+        "arch": "x86_64"
+      },
+      "checkpolicy": {
+        "epoch": "0",
+        "version": "2.5",
+        "release": "6.el7",
+        "installdate": "1535094090",
+        "arch": "x86_64"
+      },
+      "sudo": {
+        "epoch": "0",
+        "version": "1.8.19p2",
+        "release": "14.el7_5",
+        "installdate": "1535094420",
         "arch": "x86_64"
       },
       "jansson": {
@@ -5359,6 +5321,13 @@
         "installdate": "1535094090",
         "arch": "x86_64"
       },
+      "audit": {
+        "epoch": "0",
+        "version": "2.8.1",
+        "release": "3.el7_5.1",
+        "installdate": "1535094421",
+        "arch": "x86_64"
+      },
       "lzo": {
         "epoch": "0",
         "version": "2.06",
@@ -5366,11 +5335,25 @@
         "installdate": "1535094090",
         "arch": "x86_64"
       },
+      "selinux-policy-targeted": {
+        "epoch": "0",
+        "version": "3.13.1",
+        "release": "192.el7_5.6",
+        "installdate": "1535094422",
+        "arch": "noarch"
+      },
       "lz4": {
         "epoch": "0",
         "version": "1.7.5",
         "release": "2.el7",
         "installdate": "1535094090",
+        "arch": "x86_64"
+      },
+      "rsyslog": {
+        "epoch": "0",
+        "version": "8.24.0",
+        "release": "16.el7_5.4",
+        "installdate": "1535094443",
         "arch": "x86_64"
       },
       "newt-python": {
@@ -5394,11 +5377,18 @@
         "installdate": "1535094657",
         "arch": "noarch"
       },
+      "ipset-libs": {
+        "epoch": "0",
+        "version": "6.29",
+        "release": "1.el7",
+        "installdate": "1535094092",
+        "arch": "x86_64"
+      },
       "libgcc": {
         "epoch": "0",
         "version": "4.8.5",
         "release": "36.el7",
-        "installdate": "1551805715",
+        "installdate": "1551825344",
         "arch": "x86_64"
       },
       "yum-metadata-parser": {
@@ -5412,7 +5402,7 @@
         "epoch": "0",
         "version": "4.8.5",
         "release": "36.el7",
-        "installdate": "1551805721",
+        "installdate": "1551825351",
         "arch": "x86_64"
       },
       "pyxattr": {
@@ -5426,14 +5416,21 @@
         "epoch": "0",
         "version": "3.10.0",
         "release": "957.5.1.el7",
-        "installdate": "1551805727",
+        "installdate": "1551825356",
+        "arch": "x86_64"
+      },
+      "openssl": {
+        "epoch": "1",
+        "version": "1.0.2k",
+        "release": "12.el7",
+        "installdate": "1535094092",
         "arch": "x86_64"
       },
       "kernel-devel": {
         "epoch": "0",
         "version": "3.10.0",
         "release": "957.5.1.el7",
-        "installdate": "1551805738",
+        "installdate": "1551825368",
         "arch": "x86_64"
       },
       "pkgconfig": {
@@ -5443,53 +5440,39 @@
         "installdate": "1535094092",
         "arch": "x86_64"
       },
-      "audit-libs": {
+      "chef": {
         "epoch": "0",
-        "version": "2.8.4",
-        "release": "4.el7",
-        "installdate": "1551805814",
+        "version": "14.10.9",
+        "release": "1.el7",
+        "installdate": "1551825433",
         "arch": "x86_64"
       },
-      "libsepol": {
+      "grubby": {
         "epoch": "0",
-        "version": "2.5",
-        "release": "10.el7",
-        "installdate": "1551805814",
+        "version": "8.28",
+        "release": "23.el7",
+        "installdate": "1535094093",
         "arch": "x86_64"
       },
-      "openssl-libs": {
-        "epoch": "1",
-        "version": "1.0.2k",
-        "release": "16.el7",
-        "installdate": "1551805815",
+      "logrotate": {
+        "epoch": "0",
+        "version": "3.8.6",
+        "release": "15.el7",
+        "installdate": "1535094099",
         "arch": "x86_64"
       },
-      "grub2-common": {
-        "epoch": "1",
-        "version": "2.02",
-        "release": "0.76.el7.centos.1",
-        "installdate": "1551805816",
+      "python-urlgrabber": {
+        "epoch": "0",
+        "version": "3.10",
+        "release": "8.el7",
+        "installdate": "1535094100",
         "arch": "noarch"
       },
-      "python": {
-        "epoch": "0",
-        "version": "2.7.5",
-        "release": "76.el7",
-        "installdate": "1551805818",
-        "arch": "x86_64"
-      },
-      "file": {
-        "epoch": "0",
-        "version": "5.11",
-        "release": "35.el7",
-        "installdate": "1551805819",
-        "arch": "x86_64"
-      },
-      "libcollection": {
-        "epoch": "0",
-        "version": "0.7.0",
-        "release": "32.el7",
-        "installdate": "1551805819",
+      "vim-minimal": {
+        "epoch": "2",
+        "version": "7.4.160",
+        "release": "4.el7",
+        "installdate": "1535094101",
         "arch": "x86_64"
       },
       "m4": {
@@ -5499,18 +5482,11 @@
         "installdate": "1535094101",
         "arch": "x86_64"
       },
-      "libbasicobjects": {
+      "GeoIP": {
         "epoch": "0",
-        "version": "0.1.1",
-        "release": "32.el7",
-        "installdate": "1551805819",
-        "arch": "x86_64"
-      },
-      "audit-libs-python": {
-        "epoch": "0",
-        "version": "2.8.4",
-        "release": "4.el7",
-        "installdate": "1551805820",
+        "version": "1.5.0",
+        "release": "11.el7",
+        "installdate": "1535094101",
         "arch": "x86_64"
       },
       "hardlink": {
@@ -5520,32 +5496,25 @@
         "installdate": "1535094101",
         "arch": "x86_64"
       },
-      "python-firewall": {
-        "epoch": "0",
-        "version": "0.5.3",
-        "release": "5.el7",
-        "installdate": "1551805820",
-        "arch": "noarch"
-      },
-      "libssh2": {
-        "epoch": "0",
-        "version": "1.4.3",
-        "release": "12.el7",
-        "installdate": "1551805821",
-        "arch": "x86_64"
-      },
-      "nss-sysinit": {
-        "epoch": "0",
-        "version": "3.36.0",
-        "release": "7.1.el7_6",
-        "installdate": "1551805821",
-        "arch": "x86_64"
-      },
-      "rpm-libs": {
+      "rpm-python": {
         "epoch": "0",
         "version": "4.11.3",
-        "release": "35.el7",
-        "installdate": "1551805822",
+        "release": "32.el7",
+        "installdate": "1535094102",
+        "arch": "x86_64"
+      },
+      "yum": {
+        "epoch": "0",
+        "version": "3.4.3",
+        "release": "158.el7.centos",
+        "installdate": "1535094102",
+        "arch": "noarch"
+      },
+      "freetype": {
+        "epoch": "0",
+        "version": "2.4.11",
+        "release": "15.el7",
+        "installdate": "1535094102",
         "arch": "x86_64"
       },
       "libndp": {
@@ -5555,13 +5524,6 @@
         "installdate": "1535094103",
         "arch": "x86_64"
       },
-      "rpm-python": {
-        "epoch": "0",
-        "version": "4.11.3",
-        "release": "35.el7",
-        "installdate": "1551805822",
-        "arch": "x86_64"
-      },
       "libpipeline": {
         "epoch": "0",
         "version": "1.2.3",
@@ -5569,18 +5531,11 @@
         "installdate": "1535094103",
         "arch": "x86_64"
       },
-      "tar": {
+      "shadow-utils": {
         "epoch": "2",
-        "version": "1.26",
-        "release": "35.el7",
-        "installdate": "1551805823",
-        "arch": "x86_64"
-      },
-      "GeoIP": {
-        "epoch": "0",
-        "version": "1.5.0",
-        "release": "13.el7",
-        "installdate": "1551805823",
+        "version": "4.1.5.1",
+        "release": "24.el7",
+        "installdate": "1535094103",
         "arch": "x86_64"
       },
       "qrencode-libs": {
@@ -5590,32 +5545,25 @@
         "installdate": "1535094103",
         "arch": "x86_64"
       },
-      "iptables": {
-        "epoch": "0",
-        "version": "1.4.21",
-        "release": "28.el7",
-        "installdate": "1551805824",
+      "device-mapper": {
+        "epoch": "7",
+        "version": "1.02.146",
+        "release": "4.el7",
+        "installdate": "1535094104",
         "arch": "x86_64"
       },
-      "ipset": {
+      "kmod": {
         "epoch": "0",
-        "version": "6.38",
-        "release": "3.el7_6",
-        "installdate": "1551805833",
+        "version": "20",
+        "release": "21.el7",
+        "installdate": "1535094104",
         "arch": "x86_64"
       },
-      "firewalld-filesystem": {
+      "policycoreutils": {
         "epoch": "0",
-        "version": "0.5.3",
-        "release": "5.el7",
-        "installdate": "1551805833",
-        "arch": "noarch"
-      },
-      "libpath_utils": {
-        "epoch": "0",
-        "version": "0.2.1",
-        "release": "32.el7",
-        "installdate": "1551805834",
+        "version": "2.5",
+        "release": "22.el7",
+        "installdate": "1535094106",
         "arch": "x86_64"
       }
     },
@@ -5624,8 +5572,10 @@
     "shells": [
       "/bin/sh",
       "/bin/bash",
+      "/sbin/nologin",
       "/usr/bin/sh",
-      "/usr/bin/bash"
+      "/usr/bin/bash",
+      "/usr/sbin/nologin"
     ],
     "sysconf": {
       "LINK_MAX": 2147483647,
@@ -5691,7 +5641,7 @@
       "ULONG_MAX": 18446744073709551615,
       "USHRT_MAX": 65535,
       "WORD_BIT": 32,
-      "_AVPHYS_PAGES": 509683,
+      "_AVPHYS_PAGES": 675732,
       "_NPROCESSORS_CONF": 2,
       "_NPROCESSORS_ONLN": 2,
       "_PHYS_PAGES": 970246,
@@ -5947,31 +5897,24 @@
       "IPV6": 200809,
       "RAW_SOCKETS": 200809
     },
-    "chef_guid": "1eb1d140-4b03-455a-bcdd-ece3accc5d3c",
+    "chef_guid": "30d6b89a-ea53-494b-915b-f6d00b2bea0d",
     "name": "CentOSasCode",
     "chef_environment": "_default",
     "recipes": [
+      "partitions-filesystems",
+      "partitions-filesystems::default",
       "hello_web",
       "hello_web::default",
-      "filesystem",
-      "filesystem::default",
-      "fs",
-      "fs::default",
-      "mountfs",
-      "mountfs::default",
       "tz",
       "tz::default",
       "gui",
       "gui::default",
       "devops-apps",
-      "devops-apps::default",
-      "lvm::default"
+      "devops-apps::default"
     ],
     "expanded_run_list": [
+      "partitions-filesystems::default",
       "hello_web::default",
-      "filesystem::default",
-      "fs::default",
-      "mountfs::default",
       "tz::default",
       "gui::default",
       "devops-apps::default"
@@ -5980,16 +5923,10 @@
 
     ],
     "cookbooks": {
+      "partitions-filesystems": {
+        "version": "0.0.0"
+      },
       "hello_web": {
-        "version": "0.0.0"
-      },
-      "filesystem": {
-        "version": "1.0.0"
-      },
-      "fs": {
-        "version": "0.0.0"
-      },
-      "mountfs": {
         "version": "0.0.0"
       },
       "tz": {
@@ -6001,16 +5938,17 @@
       "devops-apps": {
         "version": "0.0.0"
       },
+      "filesystem": {
+        "version": "1.0.0"
+      },
       "lvm": {
         "version": "4.5.3"
       }
     }
   },
   "run_list": [
+    "recipe[partitions-filesystems]",
     "recipe[hello_web]",
-    "recipe[filesystem]",
-    "recipe[fs]",
-    "recipe[mountfs]",
     "recipe[tz]",
     "recipe[gui]",
     "recipe[devops-apps]"
