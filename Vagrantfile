@@ -48,8 +48,12 @@ Vagrant.configure("2") do |config|
     chef.data_bags_path = "data_bags"
     chef.nodes_path = "nodes"
     chef.roles_path = "roles"
-    
+
+    # Does not run properly AFTER updates
+    chef.add_recipe "python3"
+     
     # This cookbook depends on the filesystem cookbook which depends on lvm
+    chef.add_recipe "system-updates"
     chef.add_recipe "partitions-filesystems"
     chef.add_recipe "hello_web"
     chef.add_recipe "tz"

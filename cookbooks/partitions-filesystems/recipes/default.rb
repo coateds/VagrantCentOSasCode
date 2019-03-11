@@ -7,7 +7,6 @@ package 'vim-enhanced'
 # to create a partition over an existing one. Just throw the error away and ignore it.
 execute 'create-partitions' do
   command <<-EOF
-    yum upgrade -y  
     sgdisk -n 1:2048:22527 -t 1:8300 /dev/sdb 2> /dev/null
     sgdisk -n 2:$(sgdisk -F /dev/sdb):43007 -t 2:8300 /dev/sdb 2> /dev/null
     sgdisk -n 3:$(sgdisk -F /dev/sdb):63487 -t 3:8300 /dev/sdb 2> /dev/null

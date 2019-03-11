@@ -33,6 +33,50 @@ Change to Chef Zero, add filesystem supermarket cookbook, replace provision_fs.s
   end
 ```
 
+## Refactor 4
+Collapse fs and mountfs cookbooks into partitions-filesystems.
+* No change to fs cookbook, just move the resources
+* move the fs dependency on the filesystem cookbook to the metadata.rb file in the partitions-filesystems cookbook
+* Also no change to mountfs code, just move the resources
+* include installation of gdisk
+
+## Refactor 5
+Add Python3 cookbook which does not run properly AFTER the yum upgrade
+
+## Refactor 6
+move system updates to its own cookbook
+
+## Supermarket Cookbooks
+* filesystem
+* yumgroup
+
+```
+  config.vm.provision "chef_zero" do |chef|
+    chef.cookbooks_path = "cookbooks"
+    chef.data_bags_path = "data_bags"
+    chef.nodes_path = "nodes"
+    chef.roles_path = "roles"
+
+    # Does not run properly AFTER updates
+    chef.add_recipe "python3"
+     
+    # This cookbook depends on the filesystem cookbook which depends on lvm
+    chef.add_recipe "system-updates"
+    chef.add_recipe "partitions-filesystems"
+    chef.add_recipe "hello_web"
+    chef.add_recipe "tz"
+    chef.add_recipe "gui"
+    chef.add_recipe "devops-apps"
+
+    # dependency handled by metadata.rb
+    # chef.add_recipe "filesystem"
+
+    # deprecated
+    # chef.add_recipe "ga-dependencies"
+    # chef.add_recipe "fs"
+    # chef.add_recipe "mountfs"
+  end
+```
 
 ### Add Supermarket Cookbook
 Stupid manual way:
