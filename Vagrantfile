@@ -1,11 +1,13 @@
 
 Vagrant.configure("2") do |config|
+  # Use this line to prevent (time consuming!) upgrade of Guest Additions
+  # vbguest docs:  https://github.com/dotless-de/vagrant-vbguest
+  # config.vbguest.auto_update = false
+
   config.vm.box = "bento/centos-7.5"
   config.vm.network "private_network", type: "dhcp"
   config.vm.hostname = "CentOSasCode"
   # config.vm.synced_folder "../data", "/vagrant_data"
-  config.vm.boot_timeout = 1200
-  #     default is 300
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "CentOSasCode"
@@ -28,14 +30,14 @@ Vagrant.configure("2") do |config|
   # This is not technically idempotent, but is effectively idempotent
   # create gdisk partitions with sgdisk, if already exist it throws an error 
   # and moves on... send the error to /dev/null
-  config.vm.provision "shell", inline: <<-SHELL
-    yum install gdisk -y
-    yum upgrade -y
-    sgdisk -n 1:2048:22527 -t 1:8300 /dev/sdb 2> /dev/null
-    sgdisk -n 2:$(sgdisk -F /dev/sdb):43007 -t 2:8300 /dev/sdb 2> /dev/null
-    sgdisk -n 3:$(sgdisk -F /dev/sdb):63487 -t 3:8300 /dev/sdb 2> /dev/null
-    echo "inline script complete"
-  SHELL
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   yum install gdisk -y
+  #   yum upgrade -y
+  #   sgdisk -n 1:2048:22527 -t 1:8300 /dev/sdb 2> /dev/null
+  #   sgdisk -n 2:$(sgdisk -F /dev/sdb):43007 -t 2:8300 /dev/sdb 2> /dev/null
+  #   sgdisk -n 3:$(sgdisk -F /dev/sdb):63487 -t 3:8300 /dev/sdb 2> /dev/null
+  #   echo "inline script complete"
+  # SHELL
 
   # Deprecated in favor of filesystem/fs cookbooks
   # This script will create file systems on new partitions if they do not exist
@@ -47,15 +49,23 @@ Vagrant.configure("2") do |config|
     chef.nodes_path = "nodes"
     chef.roles_path = "roles"
 
+    # Does not run properly AFTER updates
+    chef.add_recipe "python3"
+     
+    # This cookbook depends on the filesystem cookbook which depends on lvm
+    chef.add_recipe "system-updates"
+    chef.add_recipe "partitions-filesystems"
     chef.add_recipe "hello_web"
-    chef.add_recipe "filesystem"
-    chef.add_recipe "fs"
-    chef.add_recipe "mountfs"
     chef.add_recipe "tz"
     chef.add_recipe "gui"
     chef.add_recipe "devops-apps"
 
+    # dependency handled by metadata.rb
+    # chef.add_recipe "filesystem"
+
     # deprecated
     # chef.add_recipe "ga-dependencies"
+    # chef.add_recipe "fs"
+    # chef.add_recipe "mountfs"
   end
 end

@@ -1,2 +1,3 @@
 .vagrant/
 *.vmdk
+nodes/CentOSasCode.json
