@@ -49,9 +49,8 @@ Vagrant.configure("2") do |config|
     chef.nodes_path = "nodes"
     chef.roles_path = "roles"
 
-    # Does not run properly AFTER updates
-    chef.add_recipe "python3"
-     
+  #   # Does not run (Python) properly AFTER updates
+
     # This cookbook depends on the filesystem cookbook which depends on lvm
     chef.add_recipe "system-updates"
     chef.add_recipe "partitions-filesystems"
@@ -59,13 +58,12 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "tz"
     chef.add_recipe "gui"
     chef.add_recipe "devops-apps"
-
-    # dependency handled by metadata.rb
-    # chef.add_recipe "filesystem"
-
+ 
     # deprecated
     # chef.add_recipe "ga-dependencies"
     # chef.add_recipe "fs"
     # chef.add_recipe "mountfs"
   end
+
+
 end
