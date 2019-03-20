@@ -1,4 +1,3 @@
-
 Vagrant.configure("2") do |config|
   # Use this line to prevent (time consuming!) upgrade of Guest Additions
   # vbguest docs:  https://github.com/dotless-de/vagrant-vbguest
@@ -50,15 +49,16 @@ Vagrant.configure("2") do |config|
     chef.roles_path = "roles"
 
     # Does not run properly AFTER updates
-    chef.add_recipe "python3"
+    # chef.add_recipe "python3"
      
     # This cookbook depends on the filesystem cookbook which depends on lvm
-    chef.add_recipe "system-updates"
-    chef.add_recipe "partitions-filesystems"
-    chef.add_recipe "hello_web"
-    chef.add_recipe "tz"
-    chef.add_recipe "gui"
-    chef.add_recipe "devops-apps"
+    chef.add_recipe "centos-as-code::default"
+    chef.add_recipe "centos-as-code::system-updates"
+    chef.add_recipe "centos-as-code::partitions-filesystems"
+    chef.add_recipe "centos-as-code::hello-web"
+    chef.add_recipe "centos-as-code::tz"
+    chef.add_recipe "centos-as-code::gui"
+    chef.add_recipe "centos-as-code::devops-apps"
 
     # dependency handled by metadata.rb
     # chef.add_recipe "filesystem"
