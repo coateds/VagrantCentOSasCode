@@ -60,9 +60,6 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "centos-as-code::gui"
     chef.add_recipe "centos-as-code::devops-apps"
 
-    # dependency handled by metadata.rb
-    # chef.add_recipe "filesystem"
-
     # deprecated
     # chef.add_recipe "ga-dependencies"
     # chef.add_recipe "fs"
