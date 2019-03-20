@@ -108,3 +108,6 @@ Doing research into refactoring CentOSasCode
 There is a filesystem cookbook:  https://supermarket.chef.io/cookbooks/filesystem/versions/1.0.0
 
 https://www.bing.com/videos/search?q=chef.recipe_url+vagrant+provision+chef+solo&view=detail&mid=E10B3E208BE4A70E549BE10B3E208BE4A70E549B&FORM=VIRE
+
+## Refactor 7
+Move all recipes into centos-as-code cookbook, add attributes and start to log progress/integration tests through the Chef provisioning process.
