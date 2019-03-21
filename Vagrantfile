@@ -4,7 +4,8 @@ Vagrant.configure("2") do |config|
   # config.vbguest.auto_update = false
 
   config.vm.box = "bento/centos-7.5"
-  config.vm.network "private_network", type: "dhcp"
+  # config.vm.network "private_network", type: "dhcp"
+  config.vm.network :private_network, ip: "192.168.16.6"
   config.vm.hostname = "CentOSasCode"
   # config.vm.synced_folder "../data", "/vagrant_data"
 

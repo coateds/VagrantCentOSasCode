@@ -1,4 +1,5 @@
-default['log-file']['path'] = '/home/vagrant/chef_provision.log'
+# default['log-file']['path'] = '/home/vagrant/chef_provision.log'
+default['log-file']['path'] = '/vagrant/chef_provision.log'
 
 default['hello_web']['package'] = 'httpd'
 default['hello_web']['service'] = 'httpd'

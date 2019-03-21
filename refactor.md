@@ -111,3 +111,7 @@ https://www.bing.com/videos/search?q=chef.recipe_url+vagrant+provision+chef+solo
 
 ## Refactor 7
 Move all recipes into centos-as-code cookbook, add attributes and start to log progress/integration tests through the Chef provisioning process.
+
+## Refactor 8
+* Set static IP Address (192.168.16.6)
+* Move chef_provision.log path to /vagrant (shared folder)

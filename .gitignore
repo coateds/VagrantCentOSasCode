@@ -1,3 +1,4 @@
 .vagrant/
 *.vmdk
-nodes/CentOSasCode.json
+nodes/
+chef_provision.log
